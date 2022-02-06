@@ -6,8 +6,7 @@
   "scripts": {
     "build": "webpack --mode production",
     "build:dev": "webpack --mode development",
-    "start": "webpack serve --mode development",
-    "server": "node ./api/index.js",
+    "server:dev": "webpack serve --mode development && webpack --mode development --watch",
     "eslint": "eslint --init"
   },
   "repository": {
