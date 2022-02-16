@@ -9,12 +9,16 @@ const PATH = {
 
 module.exports = {
   entry: {
-    ui_kit: path.join(PATH.source, 'pages', 'ui_kit', 'ui_kit.tsx'),
+    ui_kit: path.join(PATH.source, 'pages', 'ui_kit', 'indexUiKit.tsx'),
   },
   output: {
     path: PATH.dist,
     filename: 'js/[name].js',
     publicPath: '/'
+  },
+  devServer: {
+    // port: 8080,
+    historyApiFallback: true
   },
   devtool: 'inline-source-map',
   resolve: {
@@ -22,9 +26,9 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.join(PATH.source, 'pages', 'ui_kit', 'ui_kit.html'),
-      filename: 'ui_kit.html',
-      chunks: ['ui_kit']
+      template: path.join(PATH.source, 'pages', 'ui_kit', 'index.html'),
+      filename: path.join('ui_kit', 'index.html'), //'ui_kit.html',
+      // chunks: ['ui_kit']
       // chunks: ['indexx']
     }),
     new MiniCssExtractPlugin({
@@ -39,7 +43,13 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-typescript'] //, '@babel/preset-typescript'
+            presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-typescript'],
+            plugins: [
+              [
+                '@babel/plugin-proposal-class-properties',
+                { 'loose': false }
+              ]
+            ]
           }
         }
       },

@@ -1,0 +1,13 @@
+@import '../../assets/styles/fonts.scss';
+@import '../../assets/styles/colors.scss';
+// @import '../../../assets/styles/fonts.scss';
+// @import '../../../assets/styles/colors.scss';
+
+.caption {
+  font-family: 'Montserrat-Bold';
+  font-size: 12px;
+  // line-height: 15px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  color: $dark-100;
+}
