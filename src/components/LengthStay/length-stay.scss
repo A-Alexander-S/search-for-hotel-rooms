@@ -1,13 +1,56 @@
 @import '../../assets/styles/fonts.scss';
 @import '../../assets/styles/colors.scss';
-// @import '../../../assets/styles/fonts.scss';
-// @import '../../../assets/styles/colors.scss';
 
 .caption {
   font-family: 'Montserrat-Bold';
   font-size: 12px;
-  // line-height: 15px;
   text-transform: uppercase;
   margin-bottom: 6px;
   color: $dark-100;
+}
+
+.length-stay {
+  width: 320px;
+  display: flex;
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+
+.length-stay__date-arrival {
+  position: relative;
+  &::after {
+    content: url(./img/arrow_expand_more.svg);
+    position: absolute;
+    right: 16px;
+    top: 34px;
+    cursor: pointer
+  }
+}
+
+.length-stay__input {
+  width: 150px;
+  height: 44px;
+  border: 1px solid $dark-25;
+  background: #FFFFFF;
+  border-radius: 4px;
+  padding-left: 14px;
+  box-sizing: border-box;
+  &::placeholder {
+    font-family: 'Montserrat-Regular';
+    font-size: 14px;
+    line-height: 18px;
+    color: $dark-75;
+  }
+  cursor: pointer;
+}
+
+.length-stay__date-departure {
+  position: relative;
+  &::after {
+    content: url(./img/arrow_expand_more.svg);
+    position: absolute;
+    right: 16px;
+    top: 34px;
+    cursor: pointer;
+  }
 }

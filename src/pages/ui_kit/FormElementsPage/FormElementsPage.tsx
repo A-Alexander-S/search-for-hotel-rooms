@@ -45,7 +45,12 @@ export default class FormElementsPage extends Component {
               <div className="form-elements__row-item">
                 <TextField variables={{ title: 'masked text field', placeholder: 'ДД.ММ.ГГГГ' }} />
               </div>
-              <LengthStay />
+              <LengthStay variables={{
+                dateArrivalTitle: 'date Dropdown',
+                dateArrivalPlaceholder: 'ДД.ММ.ГГГГ',
+                dateDepartureTitle: 'date Dropdown',
+                dateDeparturePlaceholder: '19.08.2019',
+              }} />
             </div>
           </div>
         </div>
