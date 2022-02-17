@@ -2,7 +2,7 @@ import React from 'react';
 import './text-field.scss'
 
 interface ITextFieldProps {
-  title: string
+  title: string,
   placeholder: string,
 }
 
