@@ -26,6 +26,7 @@ body {
 }
 
 .form-elements {
+  display: flex;
   padding-left: 141px;
   padding-top: 3px;
   &__row {
@@ -34,6 +35,8 @@ body {
 }
 
 .form-elements__row-1 {
+  width: 320px;
+  margin-right: 126px;
   .form-elements__row-item {
     &:nth-child(1) {
       margin-bottom: 22px;
@@ -48,4 +51,8 @@ body {
       margin-bottom: 42px;
     }
   }
+}
+
+.form-elements__row-2 {
+  // width: 260px;
 }

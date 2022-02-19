@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { TextField } from '../../../components/TextField'
 import { LengthStay } from '../../../components/LengthStay'
+import { PermissionsCheckbox } from '../../../components/PermissionsCheckbox/'
 import './form-elements.scss';
 
 export default class FormElementsPage extends Component {
@@ -51,6 +52,14 @@ export default class FormElementsPage extends Component {
                 dateDepartureTitle: 'date Dropdown',
                 dateDeparturePlaceholder: '19.08.2019',
               }} />
+            </div>
+            <div className="form-elements__row form-elements__row-2">
+              <div className="form-elements__row-item">
+                <PermissionsCheckbox />
+              </div>
+            </div>
+            <div className="form-elements__row form-elements__row-3">
+
             </div>
           </div>
         </div>
