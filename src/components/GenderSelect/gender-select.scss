@@ -1,0 +1,62 @@
+@import '../../assets/styles/fonts.scss';
+@import '../../assets/styles/colors.scss';
+
+.gender-select {
+  .caption {
+    margin-bottom: 15px;
+  }
+}
+
+.gender-select__btns {
+  display: flex;
+}
+
+.gender-select__btns-gender {
+  position: relative;
+  padding-left: 30px;
+  &:nth-child(1) {
+    margin-right: 20px;
+  }
+  & p {
+    font-family: 'Montserrat-Regular';
+    font-size: 14px;
+    line-height: 24px;
+    color: $dark-75;
+  }
+}
+
+.gender-select__label {
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 20px;
+    height: 20px;
+    background: $white;
+    border: 1px solid $purple;
+    box-sizing: border-box;
+    border-radius: 10px;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    border-radius: 10px;
+    opacity: 0;
+  }
+}
+
+.gender-select__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  display: none;
+  &:checked + label::after {
+    opacity: 1;
+  }
+}

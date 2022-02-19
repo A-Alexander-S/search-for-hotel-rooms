@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { TextField } from '../../../components/TextField'
 import { LengthStay } from '../../../components/LengthStay'
-import { PermissionsCheckbox } from '../../../components/PermissionsCheckbox/'
+import { PermissionsCheckbox } from '../../../components/PermissionsCheckbox'
+import { GenderSelect } from '../../../components/GenderSelect'
 import './form-elements.scss';
 
 export default class FormElementsPage extends Component {
@@ -56,6 +57,9 @@ export default class FormElementsPage extends Component {
             <div className="form-elements__row form-elements__row-2">
               <div className="form-elements__row-item">
                 <PermissionsCheckbox />
+              </div>
+              <div className="form-elements__row-item">
+                <GenderSelect />
               </div>
             </div>
             <div className="form-elements__row form-elements__row-3">
