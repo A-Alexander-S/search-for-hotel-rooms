@@ -61,6 +61,9 @@ export default class FormElementsPage extends Component {
               <div className="form-elements__row-item">
                 <GenderSelect />
               </div>
+              <div className="form-elements__row-item">
+
+              </div>
             </div>
             <div className="form-elements__row form-elements__row-3">
 

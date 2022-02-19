@@ -34,7 +34,7 @@
     width: 20px;
     height: 20px;
     background: $white;
-    border: 1px solid $purple;
+    border: 1px solid $dark-25;
     box-sizing: border-box;
     border-radius: 10px;
   }
@@ -58,5 +58,8 @@
   display: none;
   &:checked + label::after {
     opacity: 1;
+  }
+  &:checked + label::before {
+    border: 1px solid $purple;
   }
 }
