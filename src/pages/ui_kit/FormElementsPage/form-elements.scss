@@ -54,10 +54,19 @@ body {
 }
 
 .form-elements__row-2 {
-  // width: 260px;
   .form-elements__row-item {
     &:nth-child(1) {
       margin-bottom: 43px;
+    }
+    &:nth-child(2) {
+      margin-bottom: 40px;
+    }
+    &:nth-child(3) {
+      &:nth-child(1) {
+        &:nth-child(1) {
+          margin-bottom: 14px;
+        }
+      }
     }
   }
 }

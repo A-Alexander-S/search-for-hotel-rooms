@@ -1,19 +1,14 @@
 import React from 'react';
 import './length-stay.scss';
 
-interface ILengthStay {
+interface ILengthStayProps {
   dateArrivalTitle: string,
   dateArrivalPlaceholder: string,
   dateDepartureTitle: string,
   dateDeparturePlaceholder: string
 }
 
-// dateArrivalTitle: 'date Dropdown',
-// dateArrivalPlaceholder: 'ДД.ММ.ГГГГ',
-// dateDepartureTitle: 'date Dropdown',
-// dateDeparturePlaceholder: '19.08.2019',
-
-export const LengthStay: React.FC<{ variables: ILengthStay }> = ({ variables }) => {
+export const LengthStay: React.FC<{ variables: ILengthStayProps }> = ({ variables }) => {
   const {
     dateArrivalTitle,
     dateArrivalPlaceholder,
