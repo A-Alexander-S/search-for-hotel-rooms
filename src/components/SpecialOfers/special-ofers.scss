@@ -1,0 +1,57 @@
+@import '../../assets/styles/fonts.scss';
+@import '../../assets/styles/colors.scss';
+
+.special-ofers {
+  .caption {
+    margin-bottom: 18px;
+  }
+}
+
+.special-ofers__toggle {
+ display: flex;
+ align-items: center;
+ box-sizing: border-box;
+}
+
+.special-ofers__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  &:checked + .special-ofers__toggle-toggle::before {
+    left: 23px;
+    background: linear-gradient(180deg, $purple 0%, #8BA4F9 100%);
+  }
+  &:checked + .special-ofers__toggle-toggle {
+    border: 1px solid $purple;
+  }
+}
+
+.special-ofers__toggle-toggle {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  background: $white;
+  border: 1px solid $dark-25;
+  border-radius: 10px;
+  margin-right: 10px;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 12px;
+    height: 12px;
+    background: $dark-25;
+    border-radius: 10px;
+    transition: .5s;
+  }
+}
+
+.special-ofers__desc {
+  font-family: 'Montserrat-Regular';
+  font-size: 14px;
+  color: $dark-25;
+  padding-bottom: 2px;
+}
