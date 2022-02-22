@@ -5,6 +5,7 @@ import { LengthStay } from "../../../components/LengthStay"
 import { PermissionsCheckbox } from "../../../components/PermissionsCheckbox"
 import { GenderSelect } from "../../../components/GenderSelect"
 import { SpecialOfers } from "../../../components/SpecialOfers"
+import { LikeButton } from "../../../components/LikeButton"
 import "./form-elements.scss";
 
 export default class FormElementsPage extends Component {
@@ -65,6 +66,13 @@ export default class FormElementsPage extends Component {
               <div className="form-elements__row-item">
                 <SpecialOfers variables={{ title: "Toggle" }} />
                 <SpecialOfers variables={{ title: "" }} />
+              </div>
+              <div className="form-elements__row-item">
+                <div className="caption">
+                  like button
+                </div>
+                <LikeButton />
+                <LikeButton />
               </div>
             </div>
             <div className="form-elements__row form-elements__row-3">

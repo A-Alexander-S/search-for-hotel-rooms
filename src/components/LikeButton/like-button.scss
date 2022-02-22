@@ -1,0 +1,27 @@
+@import '../../assets/styles/fonts.scss';
+@import '../../assets/styles/colors.scss';
+
+.like-button {
+  position: relative;
+  width: 40px;
+  height: 20px;
+  background: $white;
+  border: 1px solid $dark-25;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.pic-heart {
+  position: absolute;
+  top: 5px;
+  left: 4px;
+}
+
+.like-button__like-counter {
+  font-family: 'Montserrat-Regular';
+  width: 20px;
+  margin-left: 13px;
+  font-size: 10px;
+  text-align: center;
+  color: $dark-25;
+}
