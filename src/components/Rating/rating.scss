@@ -2,117 +2,93 @@
 @import '../../assets/styles/colors.scss';
 
 .rating {
+  display: flex;
+  align-items: flex-end;
+}
+
+.rating__body {
   position: relative;
-  display: inline-block;
-  // font-size: 40px;
-  // width: 120px;
-  // &::before {
-    // content: url(./img/star-border.svg);
-    // content: url(./img/rating-stars.svg);
-    // display: block;
-  // }
+}
+
+.rating__active {
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  &::before {
+    content: url(./img/rating-stars.svg);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: -2px;
+    left: 0;
+  }
 }
 
 .rating__items {
+  display: flex;
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
-  display: flex;
-  flex-direction: row-reverse;
-  overflow: hidden;
 }
 
 .rating__item {
-  position: absolute;
-  width: 0%;
-  height: 0%;
-  opacity: 0;
-  visibility: hidden;
-  top: 0;
-  left: 0;
-  // &:checked,
-  &:checked ~ .rating__label::before {
-      content: url(./img/star.svg);
-  }
-}
-
-.rating__label {
-  flex: 0 0 20%;
+  flex: 0 0 24px;
   height: 100%;
-  cursor: pointer;
-  &::before {
-    display: block;
-    margin-left: 2px;
-    transition: all 0.3s ease 0s;
-  }
-  &:hover,
-  &:hover ~ .rating__label,
-  &:checked ~ .rating__label:hover {
-    &::before {
-      content: url(./img/star.svg);
-    }
-  }
+  opacity: 0;
 }
-
-
-
-
-
-
 
 
 
 
 
 // .rating {
-//   // &::before {
-//   //   content: "⭐️⭐️⭐️⭐️⭐️";
-//   //   color: rebeccapurple;
-//   // }
+//   position: relative;
+//   display: inline-block;
 // }
 
 // .rating__items {
-//   position: relative;
-//   width: 124px;
-//   height: 24px;
-//   // background: url(./img/star_border-2.png);
-//   // background-position: 0 0;
+//   position: absolute;
+//   width: 100%;
+//   height: 100%;
+//   top: 0;
+//   left: 0;
+//   display: flex;
+//   flex-direction: row-reverse;
+//   overflow: hidden;
 // }
 
 // .rating__item {
 //   position: absolute;
-//   appearance: none;
-//   -webkit-appearance: none;
-//   -moz-appearance: none;
-//   height: 24px;
+//   width: 0%;
+//   height: 0%;
+//   opacity: 0;
+//   visibility: hidden;
+//   top: 0;
 //   left: 0;
-//   right: 0;
-//   // background: url(./img/star_border-2.png);
-//   // background-color: $purple;
-//   &:nth-of-type(1) {
-//     width: 24px;
-//     z-index: 5;
+//   &:checked ~ .rating__label::before {
+//       content: url(./img/star.svg);
+//   }
+// }
+
+// .rating__label {
+//   flex: 0 0 20%;
+//   height: 100%;
+//   cursor: pointer;
+//   &::before {
+//     display: block;
+//     margin-left: 2px;
+//     transition: all 0.3s ease 0s;
+//   }
+//   &:hover,
+//   &:hover ~ .rating__label,
+//   &:checked ~ .rating__label:hover {
 //     &::before {
-//       background: url(./img/star_border-2.png);
+//       content: url(./img/star.svg);
 //     }
-//   }
-//   &:nth-of-type(2) {
-//     width: 48px;
-//     z-index: 4;
-    
-//   }
-//   &:nth-of-type(3) {
-//     width: 72px;
-//     z-index: 3;
-//   }
-//   &:nth-of-type(4) {
-//     width: 96px;
-//     z-index: 2;
-//   }
-//   &:nth-of-type(5) {
-//     width: 120px;
-//     z-index: 1;
 //   }
 // }
