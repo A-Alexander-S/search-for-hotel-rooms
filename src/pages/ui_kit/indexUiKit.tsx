@@ -9,7 +9,9 @@ import ColorsAndTypePage from "./ColorsAndTypePage/ColorsAndTypePage";
 ReactDOM.render(
   // <Provider >
   <HashRouter >
-    <RouterUiKit />
+    <React.StrictMode>
+      <RouterUiKit />
+    </React.StrictMode>
   </HashRouter>,
   // </Provider>,
   document.getElementById('ui_kit')

@@ -7,6 +7,7 @@ import { GenderSelect } from "../../../components/GenderSelect"
 import { SpecialOfers } from "../../../components/SpecialOfers"
 import { LikeButton } from "../../../components/LikeButton"
 import { Rating } from "../../../components/Rating"
+import { RangeSlider } from "../../../components/RangeSlider"
 import "./form-elements.scss";
 
 export default class FormElementsPage extends Component {
@@ -81,7 +82,7 @@ export default class FormElementsPage extends Component {
               </div>
             </div>
             <div className="form-elements__row form-elements__row-3">
-
+              <RangeSlider />
             </div>
           </div>
         </div>
