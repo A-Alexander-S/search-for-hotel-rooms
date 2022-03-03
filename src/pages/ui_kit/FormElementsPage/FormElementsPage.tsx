@@ -8,6 +8,7 @@ import { SpecialOfers } from "../../../components/SpecialOfers"
 import { LikeButton } from "../../../components/LikeButton"
 import { Rating } from "../../../components/Rating"
 import { RangeSlider } from "../../../components/RangeSlider"
+import { Button, IButtonProps } from "../../../components/Button"
 import "./form-elements.scss";
 
 export default class FormElementsPage extends Component {
@@ -38,17 +39,17 @@ export default class FormElementsPage extends Component {
         </header>
         <div className="page">
           <div className="form-elements">
-            <div className="form-elements__row form-elements__row-1">
-              <div className="form-elements__row-item">
+            <div className="form-elements__column form-elements__column-1">
+              <div className="form-elements__column-item">
                 <TextField variables={{ title: "Text Field", placeholder: "Email" }} />
               </div>
-              <div className="form-elements__row-item">
+              <div className="form-elements__column-item">
                 <TextField variables={{ title: "Text Field", placeholder: "This is pretty awesome" }} />
               </div>
-              <div className="form-elements__row-item">
+              <div className="form-elements__column-item">
                 <TextField variables={{ title: "Dropdown", placeholder: "Сколько гостей" }} />
               </div>
-              <div className="form-elements__row-item">
+              <div className="form-elements__column-item">
                 <TextField variables={{ title: "masked text field", placeholder: "ДД.ММ.ГГГГ" }} />
               </div>
               <LengthStay variables={{
@@ -58,31 +59,48 @@ export default class FormElementsPage extends Component {
                 dateDeparturePlaceholder: "19.08.2019",
               }} />
             </div>
-            <div className="form-elements__row form-elements__row-2">
-              <div className="form-elements__row-item">
+            <div className="form-elements__column form-elements__column-2">
+              <div className="form-elements__column-item">
                 <PermissionsCheckbox />
               </div>
-              <div className="form-elements__row-item">
+              <div className="form-elements__column-item">
                 <GenderSelect />
               </div>
-              <div className="form-elements__row-item">
+              <div className="form-elements__column-item">
                 <SpecialOfers variables={{ title: "Toggle" }} />
                 <SpecialOfers variables={{ title: "" }} />
               </div>
-              <div className="form-elements__row-item">
+              <div className="form-elements__column-item">
                 <div className="caption">
                   like button
                 </div>
                 <LikeButton />
                 <LikeButton />
               </div>
-              <div className="form-elements__row-item">
+              <div className="form-elements__column-item">
                 <div className="caption">rate button</div>
                 <Rating />
               </div>
             </div>
-            <div className="form-elements__row form-elements__row-3">
-              <RangeSlider />
+            <div className="form-elements__column form-elements__column-3">
+              <div className="form-elements__column-item ">
+                <RangeSlider />
+              </div>
+              <div className="form-elements__column-item">
+                <div className="caption">Buttons</div>
+                <Button buttonOptions={{ classButton: "button-background", text: "CLICK ME" }} />
+                <Button buttonOptions={{ classButton: "button-background", text: "CLICK ME" }} />
+              </div>
+              <div className="form-elements__column-item">
+                <Button buttonOptions={{ classButton: "button-border", text: "CLICK ME" }} />
+                <Button buttonOptions={{ classButton: "button-border", text: "CLICK ME" }} />
+              </div>
+              <div className="form-elements__column-item">
+                <div className="">
+                  <Button buttonOptions={{ classButton: "button-text", text: "CLICK ME" }} />
+                  <Button buttonOptions={{ classButton: "button-text", text: "CLICK ME" }} />
+                </div>
+              </div>
             </div>
           </div>
         </div>
