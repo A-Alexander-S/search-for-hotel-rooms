@@ -99,8 +99,8 @@ export default class FormElementsPage extends Component {
               </div>
               <div className="form-elements__column-item">
                 <p className="caption">Buttons</p>
-                <Button buttonOptions={{ classButton: "button-background", text: "CLICK ME" }} />
-                <Button buttonOptions={{ classButton: "button-background", text: "CLICK ME" }} />
+                <Button buttonOptions={{ classButton: "button-background", width: "99px", height: "44px", text: "CLICK ME" }} />
+                <Button buttonOptions={{ classButton: "button-background", width: "99px", height: "44px", text: "CLICK ME" }} />
               </div>
               <div className="form-elements__column-item">
                 <Button buttonOptions={{ classButton: "button-border", text: "CLICK ME" }} />
@@ -111,6 +111,9 @@ export default class FormElementsPage extends Component {
                   <Button buttonOptions={{ classButton: "button-text", text: "CLICK ME" }} />
                   <Button buttonOptions={{ classButton: "button-text", text: "CLICK ME" }} />
                 </div>
+              </div>
+              <div className="form-elements__column-item">
+                <Button buttonOptions={{ classButton: "button-background", width: "320px", height: "44px", text: "перейти к оплате", img: true }} />
               </div>
             </div>
           </div>
