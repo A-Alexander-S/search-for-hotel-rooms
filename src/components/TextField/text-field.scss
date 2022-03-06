@@ -2,26 +2,17 @@
 @import '../../assets/styles/colors.scss';
 
 .text-field {
-  // &__title {
-  //   font-family: 'Montserrat-Bold';
-  //   font-size: 12px;
-  //   // line-height: 15px;
-  //   text-transform: uppercase;
-  //   margin-bottom: 6px;
-  //   color: $dark-100;
-  // }
-}
-
-.caption {
-  font-family: 'Montserrat-Bold';
-  font-size: 12px;
-  // line-height: 15px;
-  text-transform: uppercase;
-  margin-bottom: 6px;
-  color: $dark-100;
+  .caption {
+    font-family: 'Montserrat-Bold';
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    color: $dark-100;
+  }
 }
 
 .text-field__input {
+  box-sizing: border-box;
   border: 1px solid $dark-25;
   border-radius: 4px;
   width: 320px;
@@ -30,7 +21,6 @@
   box-sizing: border-box;
   padding: 13px 0 13px 14px;
   font-size: 14px;
-  // line-height: 24px;
   color: $dark-100;
   font-family: 'Montserrat-Regular';
   &:hover,&:focus{
@@ -39,7 +29,6 @@
   &::placeholder {
     font-family: 'Montserrat-Regular';
     font-size: 14px;
-    // line-height: 18px;
     color:$dark-25;
   }
 }
