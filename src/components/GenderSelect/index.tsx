@@ -4,7 +4,7 @@ import './gender-select.scss';
 export const GenderSelect: React.FC = () => {
   return (
     <div className="gender-select">
-      <div className="caption">Radio Buttons</div>
+      <p className="caption">Radio Buttons</p>
       <div className="gender-select__btns">
         <div className="gender-select__btns-gender">
           <input id="gender-select__man" className="gender-select__input" type="radio" name="gender" value="man" />

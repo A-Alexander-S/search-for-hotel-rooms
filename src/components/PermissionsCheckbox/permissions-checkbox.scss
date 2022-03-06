@@ -3,12 +3,13 @@
 
 .permissions-checkbox {
   width: 222px;
-  & .caption {
-    margin-bottom: 18px;
+  .caption {
+      font-family: 'Montserrat-Bold';
+      font-size: 12px;
+      text-transform: uppercase;
+      color: $dark-100;
+      margin-bottom: 17px;
   }
-}
-
-.caption {
 }
 
 .permissions-checkbox__label {

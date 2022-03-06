@@ -39,7 +39,7 @@ export class RangeSlider extends React.Component {
   render(): React.ReactNode {
     return (
       <div className="range-slider" >
-        <div className="caption">Range Slider</div>
+        <p className="caption">Range Slider</p>
         <div className="range-slider__price-range">
           <div className="range-slider__inputs">
             <input id="input-0" className="range-slider__input" placeholder="5000₽" type="number" />

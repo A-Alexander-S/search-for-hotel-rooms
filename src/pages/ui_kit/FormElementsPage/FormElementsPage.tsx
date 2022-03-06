@@ -9,6 +9,8 @@ import { LikeButton } from "../../../components/LikeButton"
 import { Rating } from "../../../components/Rating"
 import { RangeSlider } from "../../../components/RangeSlider"
 import { Button, IButtonProps } from "../../../components/Button"
+import { DateFilter } from "../../../components/DateFilter"
+import SubscriptionField from "../../../components/SubscriptionField"
 import "./form-elements.scss";
 
 export default class FormElementsPage extends Component {
@@ -52,12 +54,21 @@ export default class FormElementsPage extends Component {
               <div className="form-elements__column-item">
                 <TextField variables={{ title: "masked text field", placeholder: "ДД.ММ.ГГГГ" }} />
               </div>
-              <LengthStay variables={{
-                dateArrivalTitle: "date Dropdown",
-                dateArrivalPlaceholder: "ДД.ММ.ГГГГ",
-                dateDepartureTitle: "date Dropdown",
-                dateDeparturePlaceholder: "19.08.2019",
-              }} />
+              <div className="form-elements__column-item">
+                <LengthStay variables={{
+                  dateArrivalTitle: "date Dropdown",
+                  dateArrivalPlaceholder: "ДД.ММ.ГГГГ",
+                  dateDepartureTitle: "date Dropdown",
+                  dateDeparturePlaceholder: "19.08.2019",
+                }} />
+              </div>
+              <div className="form-elements__column-item">
+                <TextField variables={{ title: "filter date dropdown", placeholder: "ДД.ММ.ГГГГ" }} />
+              </div>
+              <div className="form-elements__column-item">
+                <div className="caption">subscription text field</div>
+                <SubscriptionField />
+              </div>
             </div>
             <div className="form-elements__column form-elements__column-2">
               <div className="form-elements__column-item">
@@ -71,14 +82,14 @@ export default class FormElementsPage extends Component {
                 <SpecialOfers variables={{ title: "" }} />
               </div>
               <div className="form-elements__column-item">
-                <div className="caption">
+                <p className="caption">
                   like button
-                </div>
+                </p>
                 <LikeButton />
                 <LikeButton />
               </div>
               <div className="form-elements__column-item">
-                <div className="caption">rate button</div>
+                <p className="caption">rate button</p>
                 <Rating />
               </div>
             </div>
@@ -87,7 +98,7 @@ export default class FormElementsPage extends Component {
                 <RangeSlider />
               </div>
               <div className="form-elements__column-item">
-                <div className="caption">Buttons</div>
+                <p className="caption">Buttons</p>
                 <Button buttonOptions={{ classButton: "button-background", text: "CLICK ME" }} />
                 <Button buttonOptions={{ classButton: "button-background", text: "CLICK ME" }} />
               </div>

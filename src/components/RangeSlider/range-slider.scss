@@ -6,6 +6,10 @@
   width: 270px;
   justify-content: space-between;
   & > .caption {
+    font-family: 'Montserrat-Bold';
+    font-size: 12px;
+    text-transform: uppercase;
+    color: $dark-100;
     display: inline-block;
     margin-right: 47px;
     margin-bottom: 22px;

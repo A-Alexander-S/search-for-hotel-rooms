@@ -1,14 +1,6 @@
 @import '../../assets/styles/fonts.scss';
 @import '../../assets/styles/colors.scss';
 
-.caption {
-  font-family: 'Montserrat-Bold';
-  font-size: 12px;
-  text-transform: uppercase;
-  margin-bottom: 6px;
-  color: $dark-100;
-}
-
 .length-stay {
   width: 320px;
   display: flex;
@@ -18,6 +10,13 @@
 
 .length-stay__date-arrival {
   position: relative;
+  .caption {
+    font-family: 'Montserrat-Bold';
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    color: $dark-100;
+  }
   &::after {
     content: url(./img/arrow_expand_more.svg);
     position: absolute;
@@ -46,6 +45,13 @@
 
 .length-stay__date-departure {
   position: relative;
+  .caption {
+    font-family: 'Montserrat-Bold';
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    color: $dark-100;
+  }
   &::after {
     content: url(./img/arrow_expand_more.svg);
     position: absolute;

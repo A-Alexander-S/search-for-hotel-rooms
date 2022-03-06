@@ -3,7 +3,12 @@
 
 .gender-select {
   .caption {
-    margin-bottom: 15px;
+    font-family: 'Montserrat-Bold';
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: $dark-100;
+    margin-bottom: 14px;
   }
 }
 
