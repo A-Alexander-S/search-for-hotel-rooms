@@ -11,6 +11,7 @@ import { RangeSlider } from "../../../components/RangeSlider"
 import { Button, IButtonProps } from "../../../components/Button"
 import { DateFilter } from "../../../components/DateFilter"
 import SubscriptionField from "../../../components/SubscriptionField"
+import AmountRoomsDropdown from "../../../components/AmountRoomsDropdown"
 import "./form-elements.scss";
 
 export default class FormElementsPage extends Component {
@@ -68,6 +69,39 @@ export default class FormElementsPage extends Component {
               <div className="form-elements__column-item">
                 <div className="caption">subscription text field</div>
                 <SubscriptionField />
+              </div>
+              <div className="form-elements__column-item">
+                <AmountRoomsDropdown />
+              </div>
+              <div className="form-elements__column-item" style={{ marginBottom: "150px", }}>
+                <AmountRoomsDropdown />
+              </div>
+
+
+
+              <div className="form-elements__column-item">
+                <TextField variables={{ title: "masked text field", placeholder: "ДД.ММ.ГГГГ" }} />
+              </div>
+              <div className="form-elements__column-item">
+                <TextField variables={{ title: "masked text field", placeholder: "ДД.ММ.ГГГГ" }} />
+              </div>
+              <div className="form-elements__column-item">
+                <TextField variables={{ title: "masked text field", placeholder: "ДД.ММ.ГГГГ" }} />
+              </div>
+              <div className="form-elements__column-item">
+                <TextField variables={{ title: "masked text field", placeholder: "ДД.ММ.ГГГГ" }} />
+              </div>
+              <div className="form-elements__column-item">
+                <TextField variables={{ title: "masked text field", placeholder: "ДД.ММ.ГГГГ" }} />
+              </div>
+              <div className="form-elements__column-item">
+                <TextField variables={{ title: "masked text field", placeholder: "ДД.ММ.ГГГГ" }} />
+              </div>
+              <div className="form-elements__column-item">
+                <TextField variables={{ title: "masked text field", placeholder: "ДД.ММ.ГГГГ" }} />
+              </div>
+              <div className="form-elements__column-item">
+                <TextField variables={{ title: "masked text field", placeholder: "ДД.ММ.ГГГГ" }} />
               </div>
             </div>
             <div className="form-elements__column form-elements__column-2">
