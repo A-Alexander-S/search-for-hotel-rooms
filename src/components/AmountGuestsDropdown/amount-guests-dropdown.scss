@@ -24,6 +24,10 @@
   color: $dark-75;
 }
 
+.amount-guests-dropdown-activ {
+  border: 1px solid $dark-50;
+}
+
 .amount-guests-dropdown__list {
   display: flex;
   flex-direction: column;
@@ -31,15 +35,11 @@
   width: 100%;
   box-sizing: border-box;
   background: $white;
-
-  display: block;
   border-right:  1px solid $dark-50;
   border-bottom:  1px solid $dark-50;
   border-left:  1px solid $dark-50;
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
-  // top: 44px;
-  // left: 0;
   z-index: 1;
   display: none;
 }
@@ -77,6 +77,7 @@
   justify-content: flex-end;
   margin-right: 7px;
   margin-bottom: 12px;
+  margin-left: 12px;
 }
 
 .amount-guests-dropdown-activ + .amount-guests-dropdown__list {
