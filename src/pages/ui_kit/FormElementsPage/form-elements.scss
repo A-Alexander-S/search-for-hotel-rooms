@@ -74,8 +74,8 @@ body {
 }
 
 .form-elements__column-2 {
-  width: 280px;
-  margin-right: 132px;
+  width: 320px;
+  margin-right: 72px;
   .form-elements__column-item {
     &:nth-child(1) {
       margin-bottom: 42px;
@@ -104,6 +104,7 @@ body {
       }
     }
     &:nth-child(5) {
+      margin-bottom: 195px;
       .caption {
         font-family: 'Montserrat-Bold';
         font-size: 12px;
@@ -111,6 +112,16 @@ body {
         text-transform: uppercase;
         color: $dark-100;
         margin-bottom: 19px;
+      }
+    }
+    &:nth-child(6) {
+      .caption {
+        font-family: 'Montserrat-Bold';
+        font-size: 12px;
+        line-height: 15px;
+        text-transform: uppercase;
+        color: $dark-100;
+        margin-bottom: 5px;
       }
     }
   }

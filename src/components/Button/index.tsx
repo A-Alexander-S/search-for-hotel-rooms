@@ -11,7 +11,7 @@ export interface IButtonProps {
   }
 }
 
-export class Button extends React.Component<IButtonProps> {
+export default class Button extends React.Component<IButtonProps> {
 
   constructor(props: IButtonProps) {
     super(props)
