@@ -83,7 +83,6 @@ export default class AmountRoomsDropdown extends React.Component {
   }
 
   render(): React.ReactNode {
-    console.log("this.state.render" + this.state.numberOfBedrooms);
     return (
       <div className="amount-rooms-dropdown">
         <div className="caption">dropdown</div>

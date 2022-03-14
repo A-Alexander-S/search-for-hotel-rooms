@@ -8,10 +8,11 @@ import { SpecialOfers } from "../../../components/SpecialOfers"
 import { LikeButton } from "../../../components/LikeButton"
 import { Rating } from "../../../components/Rating"
 import { RangeSlider } from "../../../components/RangeSlider"
-import { Button, IButtonProps } from "../../../components/Button"
+import Button from "../../../components/Button"
 import { DateFilter } from "../../../components/DateFilter"
 import SubscriptionField from "../../../components/SubscriptionField"
 import AmountRoomsDropdown from "../../../components/AmountRoomsDropdown"
+import AmountGuestsDropdown from "../../../components/AmountGuestsDropdown"
 import "./form-elements.scss";
 
 export default class FormElementsPage extends Component {
@@ -125,6 +126,10 @@ export default class FormElementsPage extends Component {
               <div className="form-elements__column-item">
                 <p className="caption">rate button</p>
                 <Rating />
+              </div>
+              <div className="form-elements__column-item">
+                <p className="caption">dropdown</p>
+                <AmountGuestsDropdown />
               </div>
             </div>
             <div className="form-elements__column form-elements__column-3">
