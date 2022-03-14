@@ -8,7 +8,8 @@ export interface IButtonProps {
     width?: string,
     height?: string,
     img?: boolean
-  }
+  },
+  onClick?: Function
 }
 
 export default class Button extends React.Component<IButtonProps> {

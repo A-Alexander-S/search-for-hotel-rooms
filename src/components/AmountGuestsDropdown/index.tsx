@@ -3,7 +3,8 @@ import Button from "../Button/index";
 import "./amount-guests-dropdown.scss";
 
 interface IAmountGuestsDropdown {
-  button: string,
+  classesButton: string,
+  totalNumberOfGuests: number,
   quantityAdults: number,
   quantityChildren: number,
   quantityBabies: number
@@ -11,8 +12,9 @@ interface IAmountGuestsDropdown {
 
 export default class AmountGuestsDropdown extends React.Component {
   state: IAmountGuestsDropdown = {
-    button: "amount-guests-dropdown__button",
-    quantityAdults: 1,
+    classesButton: "amount-guests-dropdown__button",
+    totalNumberOfGuests: 0,
+    quantityAdults: 0,
     quantityChildren: 0,
     quantityBabies: 0,
   }
@@ -21,15 +23,27 @@ export default class AmountGuestsDropdown extends React.Component {
    * method handler hat(button) dropdown
   */
   handleButton = (e: React.MouseEvent<HTMLButtonElement>) => {
-    if (this.state.button === "amount-guests-dropdown__button") {
+    if (this.state.classesButton === "amount-guests-dropdown__button") {
       this.setState({
-        button: "amount-guests-dropdown__button amount-guests-dropdown-activ"
+        classesButton: "amount-guests-dropdown__button amount-guests-dropdown-activ"
       })
     } else {
       this.setState({
-        button: "amount-guests-dropdown__button"
+        classesButton: "amount-guests-dropdown__button"
       })
     }
+  }
+
+  renderTotalNumberOfGuests = () => {
+    return (
+      <span>
+        {this.state.totalNumberOfGuests} {this.state.totalNumberOfGuests === 1 ? "гость" :
+          this.state.totalNumberOfGuests <= 4 ? "гостя" :
+            this.state.totalNumberOfGuests <= 20 ? "гостей" :
+              "гостей"
+        }
+      </span>
+    )
   }
 
   /**
@@ -40,27 +54,33 @@ export default class AmountGuestsDropdown extends React.Component {
     // const target = e.target as Element;
     if (e.currentTarget.classList.contains("decrease-adults") && this.state.quantityAdults !== 0) {
       this.setState((state: IAmountGuestsDropdown) => ({
-        quantityAdults: state.quantityAdults - 1
+        quantityAdults: state.quantityAdults - 1,
+        totalNumberOfGuests: state.totalNumberOfGuests - 1
       }))
     } else if (e.currentTarget.classList.contains("increase-adults")) {
       this.setState((state: IAmountGuestsDropdown) => ({
-        quantityAdults: state.quantityAdults + 1
+        quantityAdults: state.quantityAdults + 1,
+        totalNumberOfGuests: state.totalNumberOfGuests + 1
       }))
     } else if (e.currentTarget.classList.contains("decrease-children") && this.state.quantityChildren !== 0) {
       this.setState((state: IAmountGuestsDropdown) => ({
-        quantityChildren: state.quantityChildren - 1
+        quantityChildren: state.quantityChildren - 1,
+        totalNumberOfGuests: state.totalNumberOfGuests - 1
       }))
     } else if (e.currentTarget.classList.contains("increase-children")) {
       this.setState((state: IAmountGuestsDropdown) => ({
-        quantityChildren: state.quantityChildren + 1
+        quantityChildren: state.quantityChildren + 1,
+        totalNumberOfGuests: state.totalNumberOfGuests + 1
       }))
     } else if (e.currentTarget.classList.contains("decrease-babies") && this.state.quantityBabies !== 0) {
       this.setState((state: IAmountGuestsDropdown) => ({
-        quantityBabies: state.quantityBabies - 1
+        quantityBabies: state.quantityBabies - 1,
+        totalNumberOfGuests: state.totalNumberOfGuests - 1
       }))
     } else if (e.currentTarget.classList.contains("increase-babies")) {
       this.setState((state: IAmountGuestsDropdown) => ({
-        quantityBabies: state.quantityBabies + 1
+        quantityBabies: state.quantityBabies + 1,
+        totalNumberOfGuests: state.totalNumberOfGuests + 1
       }))
     }
   }
@@ -97,13 +117,17 @@ export default class AmountGuestsDropdown extends React.Component {
     )
   }
 
+  handleClickClearButton = () => {
+
+  }
+
   render(): React.ReactNode {
     return (
       <div className="amount-guests-dropdown">
         <button
-          className={this.state.button}
+          className={this.state.classesButton}
           onClick={this.handleButton}>
-          Сколько гостей
+          {this.state.totalNumberOfGuests > 0 ? this.renderTotalNumberOfGuests() : "Сколько гостей"}
           <svg width="12" height="8" viewBox="0 0 12 8" fill="none">
             <path d="M10.5938 0.578125L12 1.98438L6 7.98438L0 1.98438L1.40625 0.578125L6 5.17188L10.5938 0.578125Z" fill="#1F2041" fillOpacity="0.75" />
           </svg>
@@ -140,8 +164,15 @@ export default class AmountGuestsDropdown extends React.Component {
               {this.renderPicIncreaseDecreaseGuests("increase-babies")}
             </div>
           </li>
-          <li className="amount-guests-dropdown__button-apply">
-            <Button buttonOptions={{ classButton: "button-text", text: "применить" }} />
+          <li className="amount-guests-dropdown__button-apply" style={this.state.totalNumberOfGuests > 0 ? { justifyContent: "space-between" } :
+            { justifyContent: "flex-end" }}>
+            {(this.state.totalNumberOfGuests > 0) &&
+              <Button
+                buttonOptions={{ classButton: "button-text", text: "очистить" }}
+                onClick={this.handleClickClearButton.bind(this)}
+              />}
+            <Button
+              buttonOptions={{ classButton: "button-text", text: "применить" }} />
           </li>
         </ul>
       </div>
