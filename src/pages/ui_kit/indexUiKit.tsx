@@ -7,12 +7,10 @@ import RouterUiKit from '../../components/RouterUiKit';
 import ColorsAndTypePage from "./ColorsAndTypePage/ColorsAndTypePage";
 
 ReactDOM.render(
-  // <Provider >
   <HashRouter >
     <React.StrictMode>
       <RouterUiKit />
     </React.StrictMode>
   </HashRouter>,
-  // </Provider>,
   document.getElementById('ui_kit')
 );
