@@ -19,6 +19,11 @@ export default class AmountGuestsDropdown extends React.Component {
     quantityBabies: 0,
   }
 
+  constructor(props) {
+    super(props);
+    this.handleClickClearButton = this.handleClickClearButton.bind(this);
+  }
+
   /**
    * method handler hat(button) dropdown
   */
@@ -117,8 +122,13 @@ export default class AmountGuestsDropdown extends React.Component {
     )
   }
 
-  handleClickClearButton = () => {
-
+  handleClickClearButton = (e: React.MouseEvent<HTMLElement>) => {
+    this.setState({
+      totalNumberOfGuests: 0,
+      quantityAdults: 0,
+      quantityChildren: 0,
+      quantityBabies: 0,
+    })
   }
 
   render(): React.ReactNode {
@@ -164,12 +174,13 @@ export default class AmountGuestsDropdown extends React.Component {
               {this.renderPicIncreaseDecreaseGuests("increase-babies")}
             </div>
           </li>
-          <li className="amount-guests-dropdown__button-apply" style={this.state.totalNumberOfGuests > 0 ? { justifyContent: "space-between" } :
-            { justifyContent: "flex-end" }}>
+          <li className="amount-guests-dropdown__button-apply"
+            style={this.state.totalNumberOfGuests > 0 ? { justifyContent: "space-between" } :
+              { justifyContent: "flex-end" }}>
             {(this.state.totalNumberOfGuests > 0) &&
               <Button
                 buttonOptions={{ classButton: "button-text", text: "очистить" }}
-                onClick={this.handleClickClearButton.bind(this)}
+                onClick={this.handleClickClearButton}
               />}
             <Button
               buttonOptions={{ classButton: "button-text", text: "применить" }} />
