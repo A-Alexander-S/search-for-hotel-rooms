@@ -1,0 +1,91 @@
+@import '../../assets/styles/fonts.scss';
+@import '../../assets/styles/colors.scss';
+
+.additional-amenities {
+  width: 251px;
+}
+
+.additional-amenities__button {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  width: 100%;
+  background-color: $white;
+  margin-bottom: 17px;
+  .additional-amenities__caption {
+    font-family: 'Montserrat-Bold';
+    font-size: 12px;
+    text-transform: uppercase;
+    color: $dark-100;
+  }
+}
+
+.additional-amenities__list {
+  position: absolute;
+  width: 251px;
+  background: $white;
+  display: none;
+}
+
+.additional-amenities__list-item {
+  margin-bottom: 10px;
+  &:nth-of-type(1) {
+    margin-bottom: 11px;
+  }
+}
+
+.additional-amenities__checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  display: none;
+  &:checked + .additional-amenities__label::after {
+    opacity: 1;
+  }
+  &:checked + .additional-amenities__label::before {
+    border: 1px solid $purple;
+  }
+}
+
+.additional-amenities__label{
+  position: relative;
+  display: flex;
+  align-items: center;
+  &::before {
+    content: "";
+    flex: 0 0 20px;
+    height: 20px;
+    background: #FFFFFF;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    box-sizing: border-box;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  &::after {
+    content: url(./img/check_mark.svg);
+    position: absolute;
+    top: 3px;
+    left: 5px;
+    cursor: pointer;
+    opacity: 0;
+  }
+}
+
+.additional-amenities__checkbox {
+  display: flex;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  display: none;
+}
+
+.additional-amenities__label-text {
+  font-family: 'Montserrat-Regular';
+  font-size: 14px;
+  color: $dark-50;
+  margin-left: 10px;
+}
+
+.additional-amenities__button-active + .additional-amenities__list {
+  display: block;
+}

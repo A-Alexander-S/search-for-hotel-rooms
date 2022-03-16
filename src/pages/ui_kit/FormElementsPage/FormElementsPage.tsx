@@ -13,6 +13,7 @@ import { DateFilter } from "../../../components/DateFilter"
 import SubscriptionField from "../../../components/SubscriptionField"
 import AmountRoomsDropdown from "../../../components/AmountRoomsDropdown"
 import AmountGuestsDropdown from "../../../components/AmountGuestsDropdown"
+import AdditionalAmenities from "../../../components/AdditionalAmenities"
 import "./form-elements.scss";
 
 export default class FormElementsPage extends Component {
@@ -74,13 +75,19 @@ export default class FormElementsPage extends Component {
               <div className="form-elements__column-item">
                 <AmountRoomsDropdown />
               </div>
-              <div className="form-elements__column-item" style={{ marginBottom: "150px", }}>
+              <div className="form-elements__column-item">
                 <AmountRoomsDropdown />
               </div>
+              <div className="form-elements__column-item">
+                <AdditionalAmenities />
+              </div>
+              <div className="form-elements__column-item">
+                <AdditionalAmenities />
+              </div>
 
 
 
-              <div className="form-elements__column-item">
+              {/* <div className="form-elements__column-item">
                 <TextField variables={{ title: "masked text field", placeholder: "ДД.ММ.ГГГГ" }} />
               </div>
               <div className="form-elements__column-item">
@@ -103,7 +110,7 @@ export default class FormElementsPage extends Component {
               </div>
               <div className="form-elements__column-item">
                 <TextField variables={{ title: "masked text field", placeholder: "ДД.ММ.ГГГГ" }} />
-              </div>
+              </div> */}
             </div>
             <div className="form-elements__column form-elements__column-2">
               <div className="form-elements__column-item">
