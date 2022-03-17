@@ -14,7 +14,8 @@ module.exports = {
   output: {
     path: PATH.dist,
     filename: 'js/[name].js',
-    publicPath: '/'
+    publicPath: '/',
+    // assetModuleFilename: 'assets/[name][ext]'
   },
   devServer: {
     // port: 8080,
@@ -27,7 +28,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: path.join(PATH.source, 'pages', 'ui_kit', 'index.html'),
-      filename: path.join('ui_kit', 'index.html'), //'ui_kit.html',
+      filename: path.join('ui_kit', 'index.html'),
       // chunks: ['ui_kit']
       // chunks: ['indexx']
     }),
@@ -71,6 +72,13 @@ module.exports = {
           filename: 'fonts/[name][ext][query]'
         }
       },
+      {
+        test: /\.(png|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'img/[name][ext][query]'//path.join(PATH.dist, 'img')
+        }
+      }
       // {
       //   test: /\.(ts|tsx)$/,
       //   exclude: /node_modules/,
