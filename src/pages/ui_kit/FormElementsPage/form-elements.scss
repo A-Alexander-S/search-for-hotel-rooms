@@ -166,5 +166,17 @@ body {
         margin-right: 21px;
       }
     }
+    &:nth-child(5) {
+      margin-bottom: 378px;
+    }
+    &:nth-child(6) {
+      .caption {
+        font-family: 'Montserrat-Bold';
+        font-size: 12px;
+        text-transform: uppercase;
+        color: $dark-100;
+        margin-bottom: 6px;
+      }
+    }
   }
 }

@@ -14,6 +14,7 @@ import SubscriptionField from "../../../components/SubscriptionField"
 import AmountRoomsDropdown from "../../../components/AmountRoomsDropdown"
 import AmountGuestsDropdown from "../../../components/AmountGuestsDropdown"
 import AdditionalAmenities from "../../../components/AdditionalAmenities"
+import RoomDetails from "../../../components/RoomDetails"
 import "./form-elements.scss";
 
 export default class FormElementsPage extends Component {
@@ -84,33 +85,9 @@ export default class FormElementsPage extends Component {
               <div className="form-elements__column-item">
                 <AdditionalAmenities />
               </div>
-
-
-
-              {/* <div className="form-elements__column-item">
-                <TextField variables={{ title: "masked text field", placeholder: "ДД.ММ.ГГГГ" }} />
-              </div>
               <div className="form-elements__column-item">
-                <TextField variables={{ title: "masked text field", placeholder: "ДД.ММ.ГГГГ" }} />
+                <RoomDetails />
               </div>
-              <div className="form-elements__column-item">
-                <TextField variables={{ title: "masked text field", placeholder: "ДД.ММ.ГГГГ" }} />
-              </div>
-              <div className="form-elements__column-item">
-                <TextField variables={{ title: "masked text field", placeholder: "ДД.ММ.ГГГГ" }} />
-              </div>
-              <div className="form-elements__column-item">
-                <TextField variables={{ title: "masked text field", placeholder: "ДД.ММ.ГГГГ" }} />
-              </div>
-              <div className="form-elements__column-item">
-                <TextField variables={{ title: "masked text field", placeholder: "ДД.ММ.ГГГГ" }} />
-              </div>
-              <div className="form-elements__column-item">
-                <TextField variables={{ title: "masked text field", placeholder: "ДД.ММ.ГГГГ" }} />
-              </div>
-              <div className="form-elements__column-item">
-                <TextField variables={{ title: "masked text field", placeholder: "ДД.ММ.ГГГГ" }} />
-              </div> */}
             </div>
             <div className="form-elements__column form-elements__column-2">
               <div className="form-elements__column-item">
@@ -160,6 +137,10 @@ export default class FormElementsPage extends Component {
               </div>
               <div className="form-elements__column-item">
                 <Button buttonOptions={{ classButton: "button-background", width: "320px", height: "44px", text: "перейти к оплате", img: true }} />
+              </div>
+              <div className="form-elements__column-item">
+                <p className="caption">dropdown</p>
+                <AmountGuestsDropdown />
               </div>
             </div>
           </div>
