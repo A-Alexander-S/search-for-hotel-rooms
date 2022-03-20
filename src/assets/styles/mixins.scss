@@ -1,0 +1,15 @@
+// @import 'src/assets/styles/fonts.scss';
+// @import 'src/assets/styles/colors.scss';
+
+@mixin caption($fontSize, $color) {
+  font-family: 'Montserrat-Bold';
+  font-size: $fontSize;
+  text-transform: uppercase;
+  color: $color;
+}
+
+@mixin common_text($color) {
+  font-family: 'Montserrat-Regular';
+  font-size: 14px;
+  color: $color;
+}
