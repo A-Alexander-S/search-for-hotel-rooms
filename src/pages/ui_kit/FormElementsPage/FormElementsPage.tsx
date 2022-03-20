@@ -86,7 +86,12 @@ export default class FormElementsPage extends Component {
                 <AdditionalAmenities />
               </div>
               <div className="form-elements__column-item">
-                <RoomDetails />
+                <RoomDetails
+                  options={{
+                    noiseAbsorbingWalls: true,
+                    windowOnEveryBedroom: true,
+                    fireplace: false
+                  }} />
               </div>
             </div>
             <div className="form-elements__column form-elements__column-2">
