@@ -29,9 +29,6 @@
   margin-right: 14px;
 }
 
-.room-details__convenience {
-}
-
 .room-details__convenience-title {
   font-family: 'Montserrat-Bold';
   font-size: 14px;
@@ -40,5 +37,5 @@
 }
 
 .room-details__convenience-desc {
-  @include common_text( $dark-75);
+  @include common_text( 14px, $dark-75);
 }
