@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { TextField } from "../../../components/TextField"
 import { LengthStay } from "../../../components/LengthStay"
-import { PermissionsCheckbox } from "../../../components/PermissionsCheckbox"
+import RulesRoom from "../../../components/RulesRoom"
 import { GenderSelect } from "../../../components/GenderSelect"
 import { SpecialOfers } from "../../../components/SpecialOfers"
 import { LikeButton } from "../../../components/LikeButton"
@@ -96,7 +96,7 @@ export default class FormElementsPage extends Component {
             </div>
             <div className="form-elements__column form-elements__column-2">
               <div className="form-elements__column-item">
-                <PermissionsCheckbox />
+                <RulesRoom options={{ title: "Checkbox Buttons" }} />
               </div>
               <div className="form-elements__column-item">
                 <GenderSelect />

@@ -8,8 +8,8 @@
   color: $color;
 }
 
-@mixin common_text($color) {
+@mixin common_text($fontSize, $color) {
   font-family: 'Montserrat-Regular';
-  font-size: 14px;
+  font-size: $fontSize;
   color: $color;
 }
