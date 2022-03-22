@@ -125,6 +125,7 @@ body {
       }
     }
     &:nth-child(6) {
+      margin-bottom: 257px;
       .caption {
         font-family: 'Montserrat-Bold';
         font-size: 12px;
@@ -133,6 +134,9 @@ body {
         color: $dark-100;
         margin-bottom: 5px;
       }
+    }
+    &:nth-child(7) {
+
     }
   }
 }
