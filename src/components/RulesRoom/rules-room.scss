@@ -7,7 +7,7 @@
 .rules-room{
   width: 222px;
   &__caption {
-    @include caption(12px, $dark-100);
+    @include caption($dark-100);
       margin-bottom: 18px;
   }
 }

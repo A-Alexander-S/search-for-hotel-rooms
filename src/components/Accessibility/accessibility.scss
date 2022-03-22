@@ -1,0 +1,75 @@
+@import '../../assets/styles/fonts.scss';
+@import '../../assets/styles/colors.scss';
+@import '../../assets/styles/mixins.scss';
+
+.accessibility {}
+
+.accessibility__caption {
+  @include caption($dark-100);
+  margin-bottom: 18px;
+}
+
+.accessibility__item {
+  margin-bottom: 10px;
+  &:nth-child(1) {
+    .accessibility__label-text {
+      width: 205px;
+    }
+  }
+  &:nth-child(2) {
+    .accessibility__label-text {
+      width: 225px;
+    }
+  }
+}
+
+.accessibility__checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  display: none;
+  &:checked + .accessibility__label::before {
+    border: 1px solid $purple;
+  }
+  &:checked + .accessibility__label::after {
+    opacity: 1;
+  } 
+}
+
+.accessibility__label {
+  position: relative;
+  display: flex;
+  &::before {
+    content: "";
+    align-items: flex-start;
+    flex: 0 0 20px;
+    height: 20px;
+    margin-right: 10px;
+    background: #FFFFFF;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    box-sizing: border-box;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  &::after {
+    content: url(./img/check_mark.svg);
+    position: absolute;
+    top: 3px;
+    left: 5px;
+    cursor: pointer;
+    opacity: 0;
+  }
+}
+
+.accessibility__label-subtitle {
+  font-family: 'Montserrat-Bold';
+  font-size: 14px;
+  color: $dark-75;
+  line-height: 19px;
+  margin-bottom: 5px;
+}
+
+.accessibility__label-text {
+  @include common_text(12px, $dark-100);
+  line-height: 14px;
+}
