@@ -16,6 +16,7 @@ import AmountGuestsDropdown from "../../../components/AmountGuestsDropdown"
 import AdditionalAmenities from "../../../components/AdditionalAmenities"
 import RoomDetails from "../../../components/RoomDetails"
 import Accessibility from "../../../components/Accessibility"
+import BulletList from "../../../components/BulletList"
 import "./form-elements.scss";
 
 export default class FormElementsPage extends Component {
@@ -150,6 +151,9 @@ export default class FormElementsPage extends Component {
               <div className="form-elements__column-item">
                 <p className="caption">dropdown</p>
                 <AmountGuestsDropdown />
+              </div>
+              <div className="form-elements__column-item">
+                <BulletList options={{ pets: true, events: true, timeArrivalAndDeparture: true, }} />
               </div>
             </div>
           </div>

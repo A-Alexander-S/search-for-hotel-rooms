@@ -1,0 +1,50 @@
+@import '../../assets/styles/fonts.scss';
+@import '../../assets/styles/colors.scss';
+@import '../../assets/styles/mixins.scss';
+
+.bullet-list__caption {
+  @include caption($dark-100);
+  margin-bottom: 20px;
+}
+
+.bullet-list__list-item {
+  position: relative;
+  display: flex;
+  &:nth-child(1) {
+    margin-bottom: 24px; 
+    .bullet-list__text {
+      line-height: 11px;
+    }
+  }
+  &:nth-child(2) {
+    margin-bottom: 16px;
+    .bullet-list__text {
+      line-height: 11px;
+    }
+  }
+  &:nth-child(3) {
+    &::before {
+      margin-top: 7px;
+    }
+    .bullet-list__text {
+      line-height: 24px;
+    }
+  }
+  &::before {
+    content: "";
+    border-radius: 5px;
+    left: 0;
+    top: 0;
+    width: 10.43px;
+    height: 10px;
+    background: $dark-25;
+    margin-right: 10px;
+  }
+}
+
+.bullet-list__text {
+  align-items: center;
+  width: 235px;
+  @include common_text(14px, $dark-75);
+}
+
