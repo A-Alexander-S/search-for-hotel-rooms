@@ -2,8 +2,6 @@
 @import '../../assets/styles/colors.scss';
 @import '../../assets/styles/mixins.scss';
 
-.accessibility {}
-
 .accessibility__caption {
   @include caption($dark-100);
   margin-bottom: 18px;
