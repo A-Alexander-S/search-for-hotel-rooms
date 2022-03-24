@@ -17,6 +17,7 @@ import AdditionalAmenities from "../../../components/AdditionalAmenities"
 import RoomDetails from "../../../components/RoomDetails"
 import Accessibility from "../../../components/Accessibility"
 import BulletList from "../../../components/BulletList"
+import FeedBack from "../../../components/FeedBack"
 import "./form-elements.scss";
 
 export default class FormElementsPage extends Component {
@@ -124,6 +125,9 @@ export default class FormElementsPage extends Component {
               </div>
               <div className="form-elements__column-item">
                 <Accessibility />
+              </div>
+              <div className="form-elements__column-item">
+                <FeedBack />
               </div>
             </div>
             <div className="form-elements__column form-elements__column-3">
