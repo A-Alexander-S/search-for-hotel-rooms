@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./feed-back.scss";
-import { LikeButton } from "../../components/LikeButton";
+import LikeButton from "../../components/LikeButton";
 import avatar_ from "./img/avatar_.jpg";
 
 export default class FeedBack extends Component {
