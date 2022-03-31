@@ -2,7 +2,7 @@ import React from "react";
 import "./button.scss";
 
 export interface IButtonProps {
-  buttonOptions: {
+  options: {
     classButton: string,
     text: string
     width?: string,
@@ -19,11 +19,13 @@ export default class Button extends React.Component<IButtonProps> {
   }
 
   handleClickButton = (e: React.MouseEvent<HTMLButtonElement>) => {
-    this.props.onClick(e)
+    if (this.props.onClick !== undefined) {
+      this.props.onClick(e)
+    }
   }
 
   render(): React.ReactNode {
-    const { classButton, width, height, text, img } = this.props.buttonOptions;
+    const { classButton, width, height, text, img } = this.props.options;
 
     const classBtn = `button ${classButton}`
 
