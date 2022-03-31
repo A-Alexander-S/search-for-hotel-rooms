@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import WelcomeSearch from "../../../components/WelcomeSearch"
+import "./cards-ui_kit-page.scss";
 
 export default class CardsUiKitPage extends React.Component {
   render(): React.ReactNode {
@@ -16,6 +18,11 @@ export default class CardsUiKitPage extends React.Component {
             <li style={{ marginRight: "10px" }}><Link to='/formelements'>formElements</Link></li>
           </ul>
         </header>
+        <div className="card-page">
+          <div className="card-page__item card-page__item-1">
+            <WelcomeSearch />
+          </div>
+        </div>
       </>
     )
   }
