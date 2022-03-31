@@ -43,7 +43,8 @@ export default class FormElementsPage extends Component {
             <path d="M24 48C10.7647 48 0 37.2353 0 24C0 10.7647 10.7647 0 24 0C37.2353 0 48 10.7647 48 24C48 37.2353 37.2353 48 24 48ZM24 2.82353C12.3176 2.82353 2.82353 12.3176 2.82353 24C2.82353 35.6824 12.3176 45.1765 24 45.1765C35.6824 45.1765 45.1765 35.6824 45.1765 24C45.1765 12.3176 35.6824 2.82353 24 2.82353Z" fill="#1F2041" fillOpacity="0.25" />
           </svg>
           <ul style={{ display: "flex", }}>
-            <li><Link to="/ui_kit/index.html">Colors-and-type</Link></li>
+            <li style={{ marginRight: "10px" }}><Link to="/ui_kit/index.html">Colors-and-type</Link></li>
+            <li style={{ marginRight: "10px" }}><Link to="/cards">CardsUiKitPage</Link></li>
           </ul>
         </header>
         <div className="page">

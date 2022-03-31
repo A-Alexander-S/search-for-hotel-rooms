@@ -5,7 +5,6 @@ import './colors-and-type.scss';
 interface IId { id: string }
 
 export default class ColorsAndTypePage extends React.Component {
-  // const {id} = useParams();
   render(): React.ReactNode {
     return (
       <>
@@ -17,7 +16,8 @@ export default class ColorsAndTypePage extends React.Component {
           </svg>
 
           <ul style={{ display: 'flex', }}>
-            <li><Link to='/formelements'>formElements</Link></li>
+            <li style={{ marginRight: "10px" }}><Link to='/formelements'>formElements</Link></li>
+            <li style={{ marginRight: "10px" }}><Link to="/cards">CardsUiKitPage</Link></li>
           </ul>
         </header>
         <main className='page'>
@@ -141,10 +141,6 @@ export default class ColorsAndTypePage extends React.Component {
             </div>
           </div>
         </main>
-        {/* {React.Children} */}
-        {/* <footer className='footer'>
-          footer
-        </footer> */}
       </>
     );
   }
