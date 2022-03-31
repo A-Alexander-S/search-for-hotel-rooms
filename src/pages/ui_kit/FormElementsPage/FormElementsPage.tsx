@@ -63,7 +63,7 @@ export default class FormElementsPage extends Component {
                 <TextField variables={{ title: "masked text field", placeholder: "ДД.ММ.ГГГГ" }} />
               </div>
               <div className="form-elements__column-item">
-                <LengthStay variables={{
+                <LengthStay options={{
                   dateArrivalTitle: "date Dropdown",
                   dateArrivalPlaceholder: "ДД.ММ.ГГГГ",
                   dateDepartureTitle: "date Dropdown",
@@ -137,21 +137,21 @@ export default class FormElementsPage extends Component {
               </div>
               <div className="form-elements__column-item">
                 <p className="caption">Buttons</p>
-                <Button buttonOptions={{ classButton: "button-background", width: "99px", height: "44px", text: "CLICK ME" }} />
-                <Button buttonOptions={{ classButton: "button-background", width: "99px", height: "44px", text: "CLICK ME" }} />
+                <Button options={{ classButton: "button-background", width: "99px", height: "44px", text: "CLICK ME" }} />
+                <Button options={{ classButton: "button-background", width: "99px", height: "44px", text: "CLICK ME" }} />
               </div>
               <div className="form-elements__column-item">
-                <Button buttonOptions={{ classButton: "button-border", text: "CLICK ME" }} />
-                <Button buttonOptions={{ classButton: "button-border", text: "CLICK ME" }} />
+                <Button options={{ classButton: "button-border", text: "CLICK ME" }} />
+                <Button options={{ classButton: "button-border", text: "CLICK ME" }} />
               </div>
               <div className="form-elements__column-item">
                 <div className="">
-                  <Button buttonOptions={{ classButton: "button-text", text: "CLICK ME" }} />
-                  <Button buttonOptions={{ classButton: "button-text", text: "CLICK ME" }} />
+                  <Button options={{ classButton: "button-text", text: "CLICK ME" }} />
+                  <Button options={{ classButton: "button-text", text: "CLICK ME" }} />
                 </div>
               </div>
               <div className="form-elements__column-item">
-                <Button buttonOptions={{ classButton: "button-background", width: "320px", height: "44px", text: "перейти к оплате", img: true }} />
+                <Button options={{ classButton: "button-background", width: "320px", height: "44px", text: "перейти к оплате", img: true }} />
               </div>
               <div className="form-elements__column-item">
                 <p className="caption">dropdown</p>
