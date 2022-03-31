@@ -47,10 +47,18 @@ export class Rating extends React.Component {
     }
   }
 
-  componentDidMount() {
+  handlerRatingItemsMouseLeave = (e: React.FormEvent<HTMLElement>) => {
+    this.setRatingActiveWidth();
+  }
+
+  setRatingActiveWidth = () => {
     this.setState((state: IRatingState) => ({
       ratingActiveWidth: { width: (state.ratingValue / 0.05) + "%" }
     }))
+  }
+
+  componentDidMount() {
+    this.setRatingActiveWidth();
   }
 
   generatingPicStars = () => {
@@ -83,7 +91,9 @@ export class Rating extends React.Component {
             data-rating-value={this.state.ratingValue}
             ref={this.ratingActiveRef}
           ></div>
-          <div className="rating__items">
+          <div
+            className="rating__items"
+            onMouseLeave={this.handlerRatingItemsMouseLeave}>
             <input
               id="rating__item-1"
               className="rating__item"
