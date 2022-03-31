@@ -8,13 +8,13 @@ interface ILengthStayProps {
   dateDeparturePlaceholder: string
 }
 
-export const LengthStay: React.FC<{ variables: ILengthStayProps }> = ({ variables }) => {
+export const LengthStay: React.FC<{ options: ILengthStayProps }> = ({ options }) => {
   const {
     dateArrivalTitle,
     dateArrivalPlaceholder,
     dateDepartureTitle,
     dateDeparturePlaceholder
-  } = variables
+  } = options
   return (
     <div className="length-stay">
       <div className="length-stay__date-arrival">
