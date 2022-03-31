@@ -1,0 +1,33 @@
+@import '../../assets/styles/fonts.scss';
+@import '../../assets/styles/colors.scss';
+@import '../../assets/styles/mixins.scss';
+
+.welcome-search {
+  width: 380px;
+  background-color: $white;
+  padding: 40px 30px 30px 28px;
+  // border: 1px solid blue;
+}
+
+.welcome-search__title {
+  font-family: 'Montserrat-Bold';
+  font-size: 24px;
+  line-height: 29px;
+  color: $dark-100;
+  margin-bottom: 23px;
+}
+
+.welcome-search__wrapper-length-stay {
+  margin-bottom: 23px;
+}
+
+.welcome-search__wrapper-amount-guests {
+  margin-bottom: 31px;
+  .caption {
+    margin-bottom: 6px;
+  }
+}
+
+.caption {
+  @include caption($dark-100);
+}

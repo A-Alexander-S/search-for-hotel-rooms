@@ -1,2 +1,15 @@
 @import '../../../assets/styles/fonts.scss';
 @import '../../../assets/styles/colors.scss';
+
+.card-page {
+  display: flex;
+  border: 1px solid red;
+  width: 1440px;
+  padding-left: 140px;
+  padding-top: 4px;
+  background: #F4F4F6;
+}
+
+.card-page__item {}
+
+.card-page__item-1 {}
