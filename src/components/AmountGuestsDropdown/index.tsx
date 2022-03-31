@@ -179,11 +179,11 @@ export default class AmountGuestsDropdown extends React.Component {
               { justifyContent: "flex-end" }}>
             {(this.state.totalNumberOfGuests > 0) &&
               <Button
-                buttonOptions={{ classButton: "button-text", text: "очистить" }}
+                options={{ classButton: "button-text", text: "очистить" }}
                 onClick={this.handleClickClearButton}
               />}
             <Button
-              buttonOptions={{ classButton: "button-text", text: "применить" }} />
+              options={{ classButton: "button-text", text: "применить" }} />
           </li>
         </ul>
       </div>
