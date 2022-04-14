@@ -1,5 +1,5 @@
 import React from "react";
-import { LengthStay } from "../LengthStay";
+import LengthStay from "../LengthStay";
 import AmountGuestsDropdown from "../AmountGuestsDropdown";
 import Button from "../Button";
 import "./welcome-search.scss";
