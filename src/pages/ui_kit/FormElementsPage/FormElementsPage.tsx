@@ -118,6 +118,7 @@ export default class FormElementsPage extends Component {
                 <RulesRoom options={{ title: "Checkbox Buttons" }} />
               </div>
               <div className="form-elements__column-item">
+                <p className="caption">Radio Buttons</p>
                 <GenderSelect />
               </div>
               <div className="form-elements__column-item">

@@ -5,7 +5,6 @@ export default class GenderSelect extends React.Component {
   render(): React.ReactNode {
     return (
       <div className="gender-select" >
-        <p className="caption">Radio Buttons</p>
         <div className="gender-select__btns">
           <div className="gender-select__btns-gender">
             <input id="gender-select__man" className="gender-select__input" type="radio" name="gender" value="man" />
