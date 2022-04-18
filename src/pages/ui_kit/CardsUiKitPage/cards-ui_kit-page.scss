@@ -4,7 +4,8 @@
 .card-page {
   display: flex;
   border: 1px solid red;
-  width: 1440px;
+  flex-wrap: wrap;
+  max-width: 1440px;
   padding-left: 140px;
   padding-top: 4px;
   background: #F4F4F6;
@@ -12,4 +13,7 @@
 
 .card-page__item {}
 
-.card-page__item-1 {}
+.card-page__item-1 {
+  margin-right: 40px;
+  align-self: flex-start;
+}
