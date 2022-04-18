@@ -51,16 +51,28 @@ export default class FormElementsPage extends Component {
           <div className="form-elements">
             <div className="form-elements__column form-elements__column-1">
               <div className="form-elements__column-item">
-                <TextField options={{ title: "Text Field" }} >Email</TextField>
+                <p className="caption">
+                  Text Field
+                </p>
+                <TextField >Email</TextField>
               </div>
               <div className="form-elements__column-item">
-                <TextField options={{ title: "Text Field" }} >This is pretty awesome</TextField>
+                <p className="caption">
+                  Text Field
+                </p>
+                <TextField  >This is pretty awesome</TextField>
               </div>
               <div className="form-elements__column-item">
-                <TextField options={{ title: "Dropdown" }} >Сколько гостей</TextField>
+                <p className="caption">
+                  Text Field
+                </p>
+                <TextField  >Сколько гостей</TextField>
               </div>
               <div className="form-elements__column-item">
-                <TextField options={{ title: "masked text field" }} >ДД.ММ.ГГГГ</TextField>
+                <p className="caption">
+                  Text Field
+                </p>
+                <TextField  >ДД.ММ.ГГГГ</TextField>
               </div>
               <div className="form-elements__column-item">
                 <LengthStay options={{
@@ -71,7 +83,10 @@ export default class FormElementsPage extends Component {
                 }} />
               </div>
               <div className="form-elements__column-item">
-                <TextField options={{ title: "filter date dropdown" }} >ДД.ММ.ГГГГ</TextField>
+                <p className="caption">
+                  Text Field
+                </p>
+                <TextField  >ДД.ММ.ГГГГ</TextField>
               </div>
               <div className="form-elements__column-item">
                 <div className="caption">subscription text field</div>
