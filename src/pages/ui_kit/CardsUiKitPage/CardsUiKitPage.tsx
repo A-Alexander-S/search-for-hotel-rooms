@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import WelcomeSearch from "../../../components/WelcomeSearch"
+import RoomPayment from "../../../components/RoomPayment"
 import "./cards-ui_kit-page.scss";
 
 export default class CardsUiKitPage extends React.Component {
@@ -21,6 +22,9 @@ export default class CardsUiKitPage extends React.Component {
         <div className="card-page">
           <div className="card-page__item card-page__item-1">
             <WelcomeSearch />
+          </div>
+          <div className="card-page__item card-page__item-2">
+            <RoomPayment />
           </div>
         </div>
       </>

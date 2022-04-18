@@ -1,0 +1,146 @@
+@import '../../assets/styles/fonts.scss';
+@import '../../assets/styles/colors.scss';
+@import '../../assets/styles/mixins.scss';
+
+.room-payment {
+  max-width: 380px;
+  background: $white;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  padding-top: 40px;
+  padding-left: 28px;
+  padding-right: 31px;
+  padding-bottom: 30px;
+}
+
+.room-payment__text {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Montserrat-Regular';
+  font-size: 14px;
+  line-height: 24px;
+  color: $dark-75;
+}
+
+.room-payment__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 21px;
+}
+
+.room-payment__symbol-number {
+  font-family: 'Montserrat-Bold';
+  font-size: 14px;
+  line-height: 17px;
+  color: $dark-100;
+}
+
+.room-payment__number-room {
+  font-family: 'Montserrat-Bold';
+  font-size: 24px;
+  line-height: 30px;
+  color: $dark-100;
+}
+
+.room-payment__class-room {
+  font-family: 'Montserrat-Bold';
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: $purple;
+}
+
+.room-payment__header-price {
+  display: flex;
+  align-items: flex-end;
+  line-height: 23px;
+}
+
+.room-payment__price {
+  font-family: 'Montserrat-Bold';
+  font-size: 14px;
+  color: $dark-50;
+}
+
+.room-payment__header-symbol-ruble {
+  font-family: 'Montserrat-Bold';
+  font-size: 14px;
+  color: $dark-50;
+}
+
+.room-payment__header-subtext {
+  font-family: 'Montserrat-Regular';
+  font-size: 12px;
+  color: $dark-50;
+}
+
+.room-payment__wrapper-length-stay {
+  margin-bottom: 23px;
+}
+
+.room-payment__wrapper-amount-guests-dropdown {
+  margin-bottom: 18px;
+
+  .caption {
+    @include caption($dark-100);
+    margin-bottom: 6px;
+  }
+}
+
+.room-payment__price-accommodation {
+  margin-bottom: 6px;
+}
+
+.room-payment__price-services {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 8px;
+
+  .exclamation-in-circle {
+    margin-left: 7px;
+    align-self: center;
+  }
+}
+
+.room-payment__price-services-item {
+  display: flex;
+  line-height: 32px;
+}
+
+.room-payment__price-additional-services {
+  margin-bottom: 30px;
+
+  .exclamation-in-circle {
+    margin-left: 34px;
+  }
+}
+
+.room-payment__price-additional-services-text {
+  max-width: 186px;
+  display: inline-block;
+}
+
+.room-payment__price-additional-services-item {
+  display: flex;
+  line-height: 19px;
+}
+
+.room-payment__price-additional-services {
+  display: flex;
+  justify-content: space-between;
+}
+
+.room-payment__final-price {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Montserrat-Bold';
+  font-size: 19px;
+  // line-height: 23px;
+  color: $dark-100;
+  // border: 1px dashed rgba(31, 32, 65, 0.25);
+  // box-sizing: border-box;
+  margin-bottom: 23px;
+}

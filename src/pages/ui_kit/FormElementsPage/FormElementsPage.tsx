@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { TextField } from "../../../components/TextField"
-import { LengthStay } from "../../../components/LengthStay"
+import LengthStay from "../../../components/LengthStay"
 import RulesRoom from "../../../components/RulesRoom"
 import { GenderSelect } from "../../../components/GenderSelect"
 import { SpecialOfers } from "../../../components/SpecialOfers"
