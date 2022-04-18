@@ -1,16 +1,7 @@
 @import '../../assets/styles/fonts.scss';
 @import '../../assets/styles/colors.scss';
 
-.gender-select {
-  .caption {
-    font-family: 'Montserrat-Bold';
-    font-size: 12px;
-    line-height: 15px;
-    text-transform: uppercase;
-    color: $dark-100;
-    margin-bottom: 14px;
-  }
-}
+.gender-select {}
 
 .gender-select__btns {
   display: flex;
@@ -19,9 +10,11 @@
 .gender-select__btns-gender {
   position: relative;
   padding-left: 30px;
+
   &:nth-child(1) {
     margin-right: 20px;
   }
+
   & p {
     font-family: 'Montserrat-Regular';
     font-size: 14px;
@@ -43,6 +36,7 @@
     box-sizing: border-box;
     border-radius: 10px;
   }
+
   &::after {
     content: "";
     position: absolute;
@@ -61,10 +55,12 @@
   width: 1px;
   height: 1px;
   display: none;
-  &:checked + label::after {
+
+  &:checked+label::after {
     opacity: 1;
   }
-  &:checked + label::before {
+
+  &:checked+label::before {
     border: 1px solid $purple;
   }
 }
