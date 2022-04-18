@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import TextField from "../../../components/TextField"
 import LengthStay from "../../../components/LengthStay"
 import RulesRoom from "../../../components/RulesRoom"
-import { GenderSelect } from "../../../components/GenderSelect"
+import GenderSelect from "../../../components/GenderSelect"
 import { SpecialOfers } from "../../../components/SpecialOfers"
 import LikeButton from "../../../components/LikeButton"
 import { Rating } from "../../../components/Rating"
