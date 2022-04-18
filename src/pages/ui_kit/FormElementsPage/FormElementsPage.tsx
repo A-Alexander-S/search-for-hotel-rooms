@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { TextField } from "../../../components/TextField"
+import TextField from "../../../components/TextField"
 import LengthStay from "../../../components/LengthStay"
 import RulesRoom from "../../../components/RulesRoom"
 import { GenderSelect } from "../../../components/GenderSelect"
@@ -51,16 +51,16 @@ export default class FormElementsPage extends Component {
           <div className="form-elements">
             <div className="form-elements__column form-elements__column-1">
               <div className="form-elements__column-item">
-                <TextField variables={{ title: "Text Field", placeholder: "Email" }} />
+                <TextField options={{ title: "Text Field" }} >Email</TextField>
               </div>
               <div className="form-elements__column-item">
-                <TextField variables={{ title: "Text Field", placeholder: "This is pretty awesome" }} />
+                <TextField options={{ title: "Text Field" }} >This is pretty awesome</TextField>
               </div>
               <div className="form-elements__column-item">
-                <TextField variables={{ title: "Dropdown", placeholder: "Сколько гостей" }} />
+                <TextField options={{ title: "Dropdown" }} >Сколько гостей</TextField>
               </div>
               <div className="form-elements__column-item">
-                <TextField variables={{ title: "masked text field", placeholder: "ДД.ММ.ГГГГ" }} />
+                <TextField options={{ title: "masked text field" }} >ДД.ММ.ГГГГ</TextField>
               </div>
               <div className="form-elements__column-item">
                 <LengthStay options={{
@@ -71,7 +71,7 @@ export default class FormElementsPage extends Component {
                 }} />
               </div>
               <div className="form-elements__column-item">
-                <TextField variables={{ title: "filter date dropdown", placeholder: "ДД.ММ.ГГГГ" }} />
+                <TextField options={{ title: "filter date dropdown" }} >ДД.ММ.ГГГГ</TextField>
               </div>
               <div className="form-elements__column-item">
                 <div className="caption">subscription text field</div>
