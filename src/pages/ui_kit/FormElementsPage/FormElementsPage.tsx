@@ -54,25 +54,33 @@ export default class FormElementsPage extends Component {
                 <p className="caption">
                   Text Field
                 </p>
-                <TextField >Email</TextField>
+                <TextField
+                  options={{ type: "email", name: "email" }}
+                >Email</TextField>
               </div>
               <div className="form-elements__column-item">
                 <p className="caption">
                   Text Field
                 </p>
-                <TextField  >This is pretty awesome</TextField>
+                <TextField
+                  options={{ type: "email", name: "email" }}
+                >This is pretty awesome</TextField>
               </div>
               <div className="form-elements__column-item">
                 <p className="caption">
                   Text Field
                 </p>
-                <TextField  >Сколько гостей</TextField>
+                <TextField
+                  options={{ type: "email", name: "email" }}
+                >Сколько гостей</TextField>
               </div>
               <div className="form-elements__column-item">
                 <p className="caption">
                   Text Field
                 </p>
-                <TextField  >ДД.ММ.ГГГГ</TextField>
+                <TextField
+                  options={{ type: "date", name: "DateOfBirth" }}
+                >ДД.ММ.ГГГГ</TextField>
               </div>
               <div className="form-elements__column-item">
                 <LengthStay options={{
@@ -86,7 +94,9 @@ export default class FormElementsPage extends Component {
                 <p className="caption">
                   Text Field
                 </p>
-                <TextField  >ДД.ММ.ГГГГ</TextField>
+                <TextField
+                  options={{ type: "date", name: "DateOfBirth" }}
+                >ДД.ММ.ГГГГ</TextField>
               </div>
               <div className="form-elements__column-item">
                 <div className="caption">subscription text field</div>
