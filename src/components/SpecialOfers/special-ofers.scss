@@ -1,22 +1,13 @@
 @import '../../assets/styles/fonts.scss';
 @import '../../assets/styles/colors.scss';
 
-.special-ofers {
-  .caption {
-    font-family: 'Montserrat-Bold';
-    font-size: 12px;
-    line-height: 15px;
-    text-transform: uppercase;
-    color: $dark-100;
-    margin-bottom: 15px;
-  }
-}
+.special-ofers {}
 
 .special-ofers__toggle {
   width: 260px;
- display: flex;
- align-items: center;
- box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
 }
 
 .special-ofers__input {
@@ -24,11 +15,13 @@
   width: 1px;
   height: 1px;
   opacity: 0;
-  &:checked + .special-ofers__toggle-toggle::before {
+
+  &:checked+.special-ofers__toggle-toggle::before {
     left: 23px;
     background: linear-gradient(180deg, $purple 0%, #8BA4F9 100%);
   }
-  &:checked + .special-ofers__toggle-toggle {
+
+  &:checked+.special-ofers__toggle-toggle {
     border: 1px solid $purple;
   }
 }
@@ -42,6 +35,7 @@
   border: 1px solid $dark-25;
   border-radius: 10px;
   margin-right: 10px;
+
   &::before {
     content: "";
     position: absolute;
@@ -58,6 +52,6 @@
 .special-ofers__desc {
   font-family: 'Montserrat-Regular';
   font-size: 14px;
-  color: $dark-25;
+  color: $dark-75;
   padding-bottom: 2px;
 }
