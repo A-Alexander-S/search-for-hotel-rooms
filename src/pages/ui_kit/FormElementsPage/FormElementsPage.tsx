@@ -4,7 +4,7 @@ import TextField from "../../../components/TextField"
 import LengthStay from "../../../components/LengthStay"
 import RulesRoom from "../../../components/RulesRoom"
 import GenderSelect from "../../../components/GenderSelect"
-import { SpecialOfers } from "../../../components/SpecialOfers"
+import SpecialOfers from "../../../components/SpecialOfers"
 import LikeButton from "../../../components/LikeButton"
 import { Rating } from "../../../components/Rating"
 import { RangeSlider } from "../../../components/RangeSlider"
@@ -132,8 +132,9 @@ export default class FormElementsPage extends Component {
                 <GenderSelect />
               </div>
               <div className="form-elements__column-item">
-                <SpecialOfers variables={{ title: "Toggle" }} />
-                <SpecialOfers variables={{ title: "" }} />
+                <p className="caption">toogle</p>
+                <SpecialOfers />
+                <SpecialOfers />
               </div>
               <div className="form-elements__column-item">
                 <p className="caption">

@@ -1,0 +1,81 @@
+@import '../../assets/styles/fonts.scss';
+@import '../../assets/styles/colors.scss';
+@import '../../assets/styles/mixins.scss';
+
+.account-registration {
+  max-width: 380px;
+  box-sizing: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  padding: 42px 30px 29px 28px;
+  background: $white;
+}
+
+.account-registration__title {
+  font-family: 'Montserrat-Bold';
+  font-size: 24px;
+  color: $dark-100;
+  margin-bottom: 23px;
+}
+
+.account-registration__general-user-info {
+  margin-bottom: 22px;
+}
+
+.account-registration__wrapper-text-field {
+  &--name {
+    margin-bottom: 10px;
+  }
+
+  &--surname {
+    margin-bottom: 8px;
+  }
+
+  &--date-of-birth {
+    .caption {
+      margin-bottom: 6px;
+    }
+  }
+
+  &--email {
+    margin-bottom: 10px;
+  }
+
+  &--passwrd {
+    margin-bottom: 10px;
+  }
+}
+
+
+
+.account-registration__wrapper-gender-select {
+  margin-bottom: 24px;
+}
+
+.account-registration__login-information {
+
+  &>.caption {
+    margin-bottom: 6px;
+  }
+}
+
+.account-registration__wrapper-special-ofers {
+  margin-bottom: 23px;
+}
+
+.account-registration__wrapper-button {
+  margin-bottom: 31px;
+}
+
+.account-registration__login {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.account-registration__login-text {
+  font-family: 'Montserrat-Regular';
+  font-size: 14px;
+  color: $dark-100;
+}
