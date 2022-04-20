@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import WelcomeSearch from "../../../components/WelcomeSearch"
 import RoomPayment from "../../../components/RoomPayment"
+import AccountRegistration from "../../../components/AccountRegistration"
 import "./cards-ui_kit-page.scss";
 
 export default class CardsUiKitPage extends React.Component {
@@ -20,11 +21,18 @@ export default class CardsUiKitPage extends React.Component {
           </ul>
         </header>
         <div className="card-page">
-          <div className="card-page__item card-page__item-1">
-            <WelcomeSearch />
+          <div className="card-page__column card-page__column-1">
+            <div className="card-page__column-1-item">
+              <WelcomeSearch />
+            </div>
+            <div className="card-page__column-1-item">
+              <AccountRegistration />
+            </div>
           </div>
-          <div className="card-page__item card-page__item-2">
-            <RoomPayment />
+          <div className="card-page__column card-page__column-2">
+            <div className="card-page__column-2-item">
+              <RoomPayment />
+            </div>
           </div>
         </div>
       </>

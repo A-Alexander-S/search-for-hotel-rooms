@@ -4,16 +4,22 @@
 .card-page {
   display: flex;
   border: 1px solid red;
-  flex-wrap: wrap;
+  // flex-wrap: wrap;
   max-width: 1440px;
   padding-left: 140px;
   padding-top: 4px;
   background: #F4F4F6;
 }
 
-.card-page__item {}
+.card-page__column {
+  display: flex;
+  flex-direction: column;
+}
 
-.card-page__item-1 {
+.card-page__column-1 {
   margin-right: 40px;
-  align-self: flex-start;
+
+  .card-page__column-1-item:nth-child(1) {
+    margin-bottom: 38px;
+  }
 }
