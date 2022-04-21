@@ -13,7 +13,7 @@ export default class GenderSelect extends React.Component {
               type="radio"
               name="gender"
               value="man"
-              checked />
+              defaultChecked />
             <label
               className="gender-select__label"
               htmlFor="gender-select__man"></label>

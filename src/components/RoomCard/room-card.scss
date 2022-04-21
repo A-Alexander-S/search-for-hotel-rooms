@@ -1,0 +1,137 @@
+@import '../../assets/styles/fonts.scss';
+@import '../../assets/styles/colors.scss';
+@import '../../assets/styles/mixins.scss';
+
+.room-card {
+  width: 270px;
+  background: $white;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  border-radius: 4px;
+  padding-bottom: 16px;
+}
+
+.room-card__slider-container {
+  position: relative;
+  width: 270px;
+  height: 151px;
+  border: 1px solid red;
+  box-sizing: border-box;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.room-card__slider-track {
+  position: relative;
+  display: flex;
+  height: 151px;
+  width: 810px;
+  transition: 0.4s;
+}
+
+.room-card__slider-item {
+  height: 151px;
+  min-width: 270px;
+
+  &:nth-child(1) {
+    background-color: red;
+  }
+
+  &:nth-child(2) {
+    background-color: blue;
+  }
+
+  &:nth-child(3) {
+    background-color: black;
+  }
+
+  &:nth-child(4) {
+    background-color: green;
+  }
+}
+
+.room-card__slider-btn-prev {
+  position: absolute;
+  left: 16px;
+  top: 46%;
+  cursor: pointer;
+}
+
+.room-card__slider-btn-next {
+  position: absolute;
+  right: 16px;
+  top: 46%;
+  cursor: pointer;
+}
+
+.room-card__room-info {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 19px;
+  padding-right: 19px;
+  margin-bottom: 22px;
+}
+
+.room-card__room-number {
+  font-family: 'Montserrat-Bold';
+  font-size: 14px;
+  line-height: 17px;
+  color: $dark-100;
+}
+
+#room-card__number {
+  font-size: 20px;
+}
+
+.room-card__room-clas {
+  font-family: 'Montserrat-Bold';
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: $purple;
+}
+
+#room-card__overnight-price {
+  font-family: 'Montserrat-Bold';
+  font-size: 14px;
+  line-height: 18px;
+  color: $dark-50;
+}
+
+.room-card__overnight-price-text {
+  font-family: 'Montserrat-Regular';
+  font-size: 12px;
+  color: $dark-50;
+}
+
+.room-card__rating-and-reviews {
+  display: flex;
+  // align-items: flex-end;
+  justify-content: space-between;
+  padding-left: 19px;
+  padding-right: 19px;
+}
+
+.room-card__wrapper-rating {
+  display: inline-block;
+  // padding-left: 19px;
+  // padding-right: 19px;
+}
+
+.room-card__reviews {
+  line-height: 24px;
+}
+
+.room-card__number-reviews {
+  display: inline-block;
+  font-family: 'Montserrat-Bold';
+  font-size: 14px;
+  // line-height: 18px;
+  color: $dark-50;
+}
+
+.room-card__reviews-text {
+  font-family: 'Montserrat-Regular';
+  font-size: 14px;
+  // line-height: 18px;
+  color: $dark-50;
+}

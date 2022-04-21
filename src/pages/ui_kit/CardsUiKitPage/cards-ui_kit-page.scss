@@ -23,3 +23,24 @@
     margin-bottom: 38px;
   }
 }
+
+.card-page__column-2 {
+  margin-right: 40px;
+}
+
+.card-page__column-2-item {
+  &:nth-child(1) {
+    margin-bottom: 40px;
+  }
+}
+
+.card-page__column-3 {}
+
+.card-page__column-3-item {
+  &:nth-child(1) {
+    width: 320px;
+    height: 369px;
+    border: 1px solid red;
+    margin-bottom: 40px;
+  }
+}
