@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./cards-ui_kit-page.scss";
 import WelcomeSearch from "../../../components/WelcomeSearch"
 import RoomPayment from "../../../components/RoomPayment"
 import AccountRegistration from "../../../components/AccountRegistration"
-import "./cards-ui_kit-page.scss";
+import Authorization from "../../../components/Authorization"
+import RoomCard from "../../../components/RoomCard"
 
 export default class CardsUiKitPage extends React.Component {
   render(): React.ReactNode {
@@ -32,6 +34,17 @@ export default class CardsUiKitPage extends React.Component {
           <div className="card-page__column card-page__column-2">
             <div className="card-page__column-2-item">
               <RoomPayment />
+            </div>
+            <div className="card-page__column-2-item">
+              <Authorization />
+            </div>
+          </div>
+          <div className="card-page__column card-page__column-3">
+            <div className="card-page__column-3-item">
+
+            </div>
+            <div className="card-page__column-3-item">
+              <RoomCard />
             </div>
           </div>
         </div>
