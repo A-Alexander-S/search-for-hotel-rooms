@@ -38,17 +38,14 @@ export default class RoomCard extends React.Component {
       this.setState((state: IRoomCardState) => ({
         offset: 810
       }));
-      this.setState((state: IRoomCardState) => ({
-        sliderTrackLeftShift: { left: `${-state.offset}px` }
-      }))
     } else {
       this.setState((state: IRoomCardState) => ({
         offset: state.offset - 270
       }));
-      this.setState((state: IRoomCardState) => ({
-        sliderTrackLeftShift: { left: `${-state.offset}px` }
-      }))
     }
+    this.setState((state: IRoomCardState) => ({
+      sliderTrackLeftShift: { left: `${-state.offset}px` }
+    }))
   }
 
   handlerClickBtnNext = (e: React.SyntheticEvent<HTMLDivElement>) => {
@@ -56,21 +53,17 @@ export default class RoomCard extends React.Component {
       this.setState((state: IRoomCardState) => ({
         offset: 0
       }));
-      this.setState((state: IRoomCardState) => ({
-        sliderTrackLeftShift: { left: `${-state.offset}px` }
-      }))
     } else {
       this.setState((state: IRoomCardState) => ({
         offset: state.offset + 270
       }));
-      this.setState((state: IRoomCardState) => ({
-        sliderTrackLeftShift: { left: `${-state.offset}px` }
-      }))
     }
+    this.setState((state: IRoomCardState) => ({
+      sliderTrackLeftShift: { left: `${-state.offset}px` }
+    }))
   }
 
   render(): React.ReactNode {
-    console.log(this.state.offset)
     return (
       <div className="room-card">
 
