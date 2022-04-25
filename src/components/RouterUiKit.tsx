@@ -2,7 +2,6 @@ import React, { Component, useState } from "react";
 import { Switch, Route } from "react-router-dom";
 import ColorsAndTypePage from "../pages/ui_kit/ColorsAndTypePage/ColorsAndTypePage";
 import FormElementsPage from "../pages/ui_kit/FormElementsPage/FormElementsPage";
-import LayoutUiKitPage from "../pages/ui_kit/LayoutUiKitPage/LayoutUiKitPage";
 import CardsUiKitPage from "../pages/ui_kit/CardsUiKitPage/CardsUiKitPage";
 
 export default class RouterUiKit extends Component {
@@ -12,7 +11,9 @@ export default class RouterUiKit extends Component {
         <Route exact path='/' component={ColorsAndTypePage} />
         <Route exact path='/ui_kit/index.html' component={ColorsAndTypePage} />
         <Route exact path='/formelements' component={FormElementsPage} />
-        <Route exact path='/cards' component={CardsUiKitPage} />
+        <Route exact path='/cards' render={() =>
+          <CardsUiKitPage />
+        } />
       </Switch>
     )
   }
