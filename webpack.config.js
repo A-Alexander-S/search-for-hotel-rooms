@@ -9,7 +9,6 @@ const PATH = {
 
 module.exports = {
   entry: {
-    ui_kit: path.join(PATH.source, 'pages', 'ui_kit', 'indexUiKit.tsx'),
     app: path.join(PATH.source, 'index.tsx'),
   },
   output: {
@@ -30,12 +29,6 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.js', '.json']
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: path.join(PATH.source, 'pages', 'ui_kit', 'index.html'),
-      filename: path.join('ui_kit', 'index.html'),
-      chunks: ['ui_kit']
-      // chunks: ['indexx']
-    }),
     new HtmlWebpackPlugin({
       template: path.join(PATH.source, 'index.html'),
       filename: path.join('index.html'),
