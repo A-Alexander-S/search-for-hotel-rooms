@@ -3,16 +3,18 @@
 
 .subscription-field {
   position: relative;
+
   &::after {
     position: absolute;
     content: url(./img/arrow_forward.svg);
     top: 13px;
-    right: 67px;
+    right: 17px;
+    cursor: pointer;
   }
 }
 
 .subscription-field__input {
-  width: 267px;
+  width: 100%;
   height: 44px;
   box-sizing: border-box;
   background: $white;
@@ -20,19 +22,18 @@
   box-sizing: border-box;
   border-radius: 4px;
   padding: 0px 0px 0px 13px;
+
+  font-family: 'Montserrat-Regular';
+  font-size: 14px;
+  color: $dark-75;
+
   &::placeholder {
     font-family: 'Montserrat-Regular';
     font-size: 14px;
     color: $dark-25;
   }
+
   &:hover {
     border: 1px solid $dark-50;
   }
 }
-// .caption {
-//   font-family: 'Montserrat-Bold';
-//   font-size: 12px;
-//   line-height: 15px;
-//   text-transform: uppercase;
-//   color: $dark-100;
-// }
