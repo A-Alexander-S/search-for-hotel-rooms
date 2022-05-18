@@ -2,14 +2,16 @@
 @import '../../assets/styles/colors.scss';
 
 .length-stay {
-  width: 320px;
+  max-width: 320px;
   display: flex;
+  flex-wrap: wrap;
   box-sizing: border-box;
   justify-content: space-between;
 }
 
 .length-stay__date-arrival {
   position: relative;
+
   .caption {
     font-family: 'Montserrat-Bold';
     font-size: 12px;
@@ -17,6 +19,7 @@
     margin-bottom: 6px;
     color: $dark-100;
   }
+
   &::after {
     content: url(./img/arrow_expand_more.svg);
     position: absolute;
@@ -34,17 +37,20 @@
   border-radius: 4px;
   padding-left: 14px;
   box-sizing: border-box;
+
   &::placeholder {
     font-family: 'Montserrat-Regular';
     font-size: 14px;
     line-height: 18px;
     color: $dark-75;
   }
+
   cursor: pointer;
 }
 
 .length-stay__date-departure {
   position: relative;
+
   .caption {
     font-family: 'Montserrat-Bold';
     font-size: 12px;
@@ -52,6 +58,7 @@
     margin-bottom: 6px;
     color: $dark-100;
   }
+
   &::after {
     content: url(./img/arrow_expand_more.svg);
     position: absolute;
