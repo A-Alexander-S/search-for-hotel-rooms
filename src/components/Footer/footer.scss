@@ -1,0 +1,115 @@
+@import '../../assets/styles/fonts.scss';
+@import '../../assets/styles/colors.scss';
+@import '../../assets/styles/mixins.scss';
+
+.footer {
+  height: 372px;
+  padding-top: 100px;
+  background-color: $white;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.footer-flex {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 35px;
+}
+
+.footer__info {
+  max-width: 260px;
+}
+
+.footer__logo {
+  max-width: 105px;
+  height: 40px;
+  margin-bottom: 20px;
+}
+
+.footer__info-text {
+  font-family: 'Montserrat-Regular';
+  font-size: 14px;
+  line-height: 24px;
+  color: $dark-75;
+}
+
+.footer__nav {}
+
+.footer__item {
+  // margin-right: 40px;
+
+  .caption {
+    margin-bottom: 21px;
+  }
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
+
+.footer__nav-list {}
+
+.footer__list-item {
+  font-family: 'Montserrat-Regular';
+  font-size: 14px;
+  color: $dark-50;
+  margin-bottom: 20px;
+
+  & a {
+    &:hover {
+      color: $dark-100;
+    }
+
+    color: $dark-50;
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.footer__subscription {
+  max-width: 260px;
+}
+
+.footer__subscription-text {
+  font-family: 'Montserrat-Regular';
+  font-size: 14px;
+  line-height: 24px;
+  color: $dark-75;
+  margin-bottom: 20px;
+}
+
+.footer__subscription-wrapp-subscription-field {
+  max-width: 260px;
+}
+
+.footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+.footer__bottom-text {
+  font-family: 'Montserrat-Regular';
+  font-size: 14px;
+  line-height: 17px;
+  color: $dark-75;
+}
+
+.footer__bottom-list {
+  display: flex;
+}
+
+.footer__bottom-list-item {
+  margin-right: 20px;
+
+  &:last-of-type {
+    margin-right: 0px;
+  }
+
+}
