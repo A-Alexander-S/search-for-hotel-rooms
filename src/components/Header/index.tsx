@@ -19,8 +19,6 @@ export default class Header extends React.Component {
   }
 
   handlerClickHeaderBurger = () => {
-    // const indexClassHeaderNav = this.state.classesHeaderBurger.indexOf('header__nav-active');
-    // const indexClassHeaderBurger = this.state.classesHeaderBurger.indexOf('header__burger-active');
     if (this.state.classesHeaderNav === "header__nav") {
       this.setState({
         classesHeaderNav: "header__nav header__nav-active",
@@ -32,23 +30,6 @@ export default class Header extends React.Component {
         classesHeaderBurger: "header__burger"
       })
     }
-
-    // if (indexClassHeaderBurger != -1) {
-    //   this.setState({
-    //     classesHeaderNav: this.state.classesHeaderNav.slice(0, indexClassHeaderNav),
-    //     // classesHeaderBurger: this.state.classesHeaderBurger.slice(0, indexClassHeaderBurger)
-    //   });
-    //   this.setState({
-    //     // classesHeaderNav: this.state.classesHeaderNav.slice(0, indexClassHeaderNav),
-    //     classesHeaderBurger: this.state.classesHeaderBurger.slice(0, indexClassHeaderBurger)
-    //   });
-    // } else {
-    //   this.setState({
-    //     indexClassHeaderNav: this.state.classesHeaderNav + 'header__nav-active',
-    //     classesHeaderBurger: this.state.classesHeaderBurger + 'header__burger-active'
-    //   })
-    // }
-
   }
   render(): React.ReactNode {
     return (
