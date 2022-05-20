@@ -21,7 +21,13 @@ module.exports = {
     // port: 8080,
     historyApiFallback: {
       index: './index.html'
-    }
+    },
+    // proxy: {
+    //   '/app': {
+    //     target: 'http://localhost:3000',
+    //     // pathRewrite: { '^/api': '' },
+    //   }
+    // }
     // historyApiFallback: true
   },
   devtool: 'eval-source-map', //'inline-source-map'

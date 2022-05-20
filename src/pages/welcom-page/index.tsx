@@ -16,7 +16,7 @@ export default class WelcomPage extends React.Component {
             </div>
           </div>
         </main>
-        {/* <Footer /> */}
+        <Footer />
       </>
     )
   }
