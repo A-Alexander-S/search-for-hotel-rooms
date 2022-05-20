@@ -1,0 +1,48 @@
+@import '../../assets/styles/zeroing.scss';
+@import '../../assets/styles/fonts.scss';
+@import '../../assets/styles/colors.scss';
+@import '../../assets/styles/mixins.scss';
+
+#app {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-welcom {
+  background: url("./img/image_3.jpg") 0 0/100% auto no-repeat;
+  flex: 1 1 auto;
+  padding-top: 70px;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 15px;
+}
+
+.main-welcom__wrapp-welcom-search {
+  padding-top: 70px;
+}
+
+@media(max-width: 1200px) {
+  .container {
+    max-width: 970px;
+  }
+}
+
+@media(max-width: 992px) {
+  .container {
+    max-width: 860px; // 750
+  }
+
+  .main-welcom__wrapp-welcom-search {
+    padding-top: 0px;
+  }
+}
+
+@media(max-width: 767px) {
+  .container {
+    max-width: none;
+  }
+}

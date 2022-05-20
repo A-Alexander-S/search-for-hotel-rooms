@@ -24,7 +24,7 @@ export default class WelcomeSearch extends React.Component {
           <AmountGuestsDropdown />
         </div>
         <div className="welcome-search__wrapper-button">
-          <Button options={{ classButton: "button-background", text: "подобрать номер", width: "320px", height: "44px", img: true }} />
+          <Button options={{ classButton: "button-background", text: "подобрать номер", width: "100%", height: "44px", img: true }} />
         </div>
       </div>
     )
