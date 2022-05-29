@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const webpack = require('webpack');
 
 const PATH = {
   source: path.join(__dirname, 'src'),
@@ -28,7 +29,7 @@ module.exports = {
     //     // pathRewrite: { '^/api': '' },
     //   }
     // }
-    // historyApiFallback: true
+    historyApiFallback: true
   },
   devtool: 'eval-source-map', //'inline-source-map'
   resolve: {
@@ -43,6 +44,12 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: path.join('.', 'styles', '[name].css'),
     }),
+    // new webpack.ProvidePlugin({
+    //   $: 'jquery',
+    //   jQuery: 'jquery',
+    //   'window.$': 'jquery',
+    //   'window.jQuery': 'jquery'
+    // }),
   ],
   module: {
     rules: [
@@ -52,18 +59,23 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-typescript'],
+            presets: [
+              '@babel/preset-env',
+              '@babel/preset-react',
+              '@babel/preset-typescript',
+            ],
             plugins: [
               [
                 '@babel/plugin-proposal-class-properties',
                 { 'loose': false }
-              ]
+              ],
+              ["@babel/plugin-transform-runtime"]
             ]
           }
         }
       },
       {
-        test: /\.s[ac]ss$/i,
+        test: /\.(s[ac]ss|css)$/i, //test: /\.s[ac]ss$/i,
         // test: /\.scss$/i,
         use: [
           MiniCssExtractPlugin.loader,
