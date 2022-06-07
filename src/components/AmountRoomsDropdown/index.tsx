@@ -1,31 +1,36 @@
 import React from "react";
 import "./amount-rooms-dropdown.scss";
 
-interface IAmountRoomsDropdownState {
-  classesAmountRoomsDropdownList: string,
+interface IAmountRoomsDropdownProps {
+  options: {
+    title?: string,
+  }
 }
 
-interface IState {
+interface IAmountRoomsDropdownState {
   numberOfBedrooms: number,
   numberOfBeds: number,
   numberOfBathrooms: number,
   classesAmountRoomsDropdownList: string
 }
 
-export default class AmountRoomsDropdown extends React.Component {
+export default class AmountRoomsDropdown extends React.Component<IAmountRoomsDropdownProps, IAmountRoomsDropdownState> {
   private amountRoomsDropdownButtonRef: React.RefObject<HTMLButtonElement>
-  state = {
+  state: IAmountRoomsDropdownState = {
     numberOfBedrooms: 1,
     numberOfBeds: 1,
     numberOfBathrooms: 1,
     classesAmountRoomsDropdownList: "amount-rooms-dropdown__list ",
   }
 
-  constructor(props) {
+  constructor(props: IAmountRoomsDropdownProps) {
     super(props);
     this.amountRoomsDropdownButtonRef = React.createRef();
   }
 
+  /**
+   * adds an active state (class) to a list of elements
+  */
   handleClickButton = (e: React.MouseEvent<HTMLButtonElement>) => {
 
     const amountRoomsDropdown = e.currentTarget.closest(".amount-rooms-dropdown");
@@ -45,38 +50,47 @@ export default class AmountRoomsDropdown extends React.Component {
     }
   }
 
+  /**
+   * changing the number of Bedrooms
+  */
   handleClickChangeQuantityBedrooms = (e: React.MouseEvent<SVGSVGElement>) => {
 
     if (e.currentTarget.classList[1] === "amount-rooms-dropdown__pic-minus-bedrooms" && this.state.numberOfBedrooms !== 0) {
-      this.setState((state: IState) => ({
+      this.setState((state: IAmountRoomsDropdownState) => ({
         numberOfBedrooms: state.numberOfBedrooms - 1
       }))
     } else if (e.currentTarget.classList[1] === "amount-rooms-dropdown__pic-plus-bedrooms") {
-      this.setState((state: IState) => ({
+      this.setState((state: IAmountRoomsDropdownState) => ({
         numberOfBedrooms: state.numberOfBedrooms + 1
       }))
     }
   }
 
+  /**
+   * changing the number of beds
+  */
   handleClickChangeQuantityBeds = (e: React.MouseEvent<SVGSVGElement>) => {
     if (e.currentTarget.classList[1] === "amount-rooms-dropdown__pic-minus-beds" && this.state.numberOfBeds !== 0) {
-      this.setState((state: IState) => ({
+      this.setState((state: IAmountRoomsDropdownState) => ({
         numberOfBeds: state.numberOfBeds - 1
       }))
     } else if (e.currentTarget.classList[1] === "amount-rooms-dropdown__pic-plus-beds") {
-      this.setState((state: IState) => ({
+      this.setState((state: IAmountRoomsDropdownState) => ({
         numberOfBeds: state.numberOfBeds + 1
       }))
     }
   }
 
+  /**
+   * changing the number of Bathrooms
+  */
   handleClickChangeQuantityBathrooms = (e: React.MouseEvent<SVGSVGElement>) => {
     if (e.currentTarget.classList[1] === "amount-rooms-dropdown__pic-minus-bathrooms" && this.state.numberOfBathrooms !== 0) {
-      this.setState((state: IState) => ({
+      this.setState((state: IAmountRoomsDropdownState) => ({
         numberOfBathrooms: state.numberOfBathrooms - 1
       }))
     } else if (e.currentTarget.classList[1] === "amount-rooms-dropdown__pic-plus-bathrooms") {
-      this.setState((state: IState) => ({
+      this.setState((state: IAmountRoomsDropdownState) => ({
         numberOfBathrooms: state.numberOfBathrooms + 1
       }))
     }
@@ -85,7 +99,7 @@ export default class AmountRoomsDropdown extends React.Component {
   render(): React.ReactNode {
     return (
       <div className="amount-rooms-dropdown">
-        <div className="caption">dropdown</div>
+        <div className="caption">{this.props.options.title}</div>
         <div className="amount-rooms-dropdown__drpdn">
           <button
             className="amount-rooms-dropdown__button"
