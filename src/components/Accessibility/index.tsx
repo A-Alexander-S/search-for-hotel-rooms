@@ -1,11 +1,22 @@
 import React from "react";
 import "./accessibility.scss";
 
-export default class Accessibility extends React.Component {
+interface IAccessibilityProps {
+  options: {
+    title: string
+  }
+}
+
+export default class Accessibility extends React.Component<IAccessibilityProps> {
+  constructor(props: IAccessibilityProps) {
+    super(props);
+  }
+
   render(): React.ReactNode {
+    const { title } = this.props.options;
     return (
       <div className="accessibility">
-        <p className="accessibility__caption">rich Checkbox Buttons</p>
+        <p className="accessibility__caption">{title}</p>
         <ul className="accessibility__list">
           <li className="accessibility__item">
             <input id="wide-corridor" className="accessibility__checkbox" type="checkbox" name="wide-corridor" />
