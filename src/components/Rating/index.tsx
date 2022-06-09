@@ -6,7 +6,7 @@ interface IRatingState {
   ratingActiveWidth: object
 }
 
-export class Rating extends React.Component {
+export class Rating extends React.Component<{}, IRatingState> {
 
   ratingRef: React.RefObject<HTMLDivElement>;
   ratingActiveRef: React.RefObject<HTMLDivElement>;
@@ -22,6 +22,10 @@ export class Rating extends React.Component {
     this.ratingActiveRef = React.createRef();
   }
 
+  /**
+   * method paints the stars when hovering over the mouse, 
+   * by changing a certain plate with the class rating_active
+  */
   handlerFocusStar = (e: React.FormEvent<HTMLInputElement>) => {
 
     if (e.currentTarget.id == "rating__item-1") {
@@ -47,10 +51,21 @@ export class Rating extends React.Component {
     }
   }
 
+  /**
+   * Method sets this.state.ratingActiveWidth to the desired value 
+   * for the given rating when the mouse cursor is removed
+  */
   handlerRatingItemsMouseLeave = (e: React.FormEvent<HTMLElement>) => {
     this.setRatingActiveWidth();
   }
 
+  /**
+   * 
+   * Method calculates the percentage of coloring for a block with the rating_active class, 
+   * based on the rating value.
+   * Sets the value of the ratingActiveWidth variable in the state.
+   *  ratingActiveWidth is the style object for the block with the class rating__active
+  */
   setRatingActiveWidth = () => {
     this.setState((state: IRatingState) => ({
       ratingActiveWidth: { width: (state.ratingValue / 0.05) + "%" }
@@ -74,7 +89,6 @@ export class Rating extends React.Component {
   }
 
   render(): React.ReactNode {
-    console.log(this.state.ratingActiveWidth)
     return (
       <div
         className="rating"
