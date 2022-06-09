@@ -4,9 +4,9 @@ import './length-stay.scss';
 interface ILengthStayProps {
   options: {
     dateArrivalTitle: string,
-    dateArrivalPlaceholder: string,
+    dateArrivalPlaceholder?: string,
     dateDepartureTitle: string,
-    dateDeparturePlaceholder: string
+    dateDeparturePlaceholder?: string
   }
 }
 
