@@ -4,13 +4,38 @@ import { Rating } from "../Rating";
 import arrowPrev from "./img/arrow_prev.png";
 import arrowNext from "./img/arrow_next.png";
 
+interface IRoomCardProps {
+  options: {
+    id: number,
+    roomNumber: number,
+    price: number,
+    countBedrooms: number,
+    countBeds: number,
+    countBathrooms: number,
+    corridorWidth: number,
+    desktop: boolean,
+    chairForFeeding: boolean,
+    crib: boolean,
+    airConditioning: boolean,
+    noiseAbsorbingWalls: boolean,
+    windowInEveryBedroom: boolean,
+    smoke: boolean,
+    pets: boolean,
+    guests: boolean,
+    imgsRoom: string,
+    rating: number,
+    createdAt: string,
+    updatedAt: string
+  }
+}
+
 interface IRoomCardState {
   sliderTrackRightShift: {},
   sliderTrackLeftShift: {},
   offset: number
 }
 
-export default class RoomCard extends React.Component {
+export default class RoomCard extends React.Component<IRoomCardProps, IRoomCardState> {
   private containerRef: React.RefObject<HTMLDivElement>
   private trackRef: React.RefObject<HTMLDivElement>
   private itemRef: React.RefObject<HTMLDivElement>
@@ -23,7 +48,7 @@ export default class RoomCard extends React.Component {
     offset: 0
   }
 
-  constructor(props) {
+  constructor(props: IRoomCardProps) {
     super(props);
 
     this.containerRef = React.createRef();
@@ -33,6 +58,10 @@ export default class RoomCard extends React.Component {
     this.arrowNext = React.createRef();
   }
 
+  /**
+   * The method handles a mouse click on the left button,
+   * and shows the previous slide
+  */
   handlerClickBtnPrev = (e: React.SyntheticEvent<HTMLDivElement>) => {
     if (this.state.offset < 270) {
       this.setState((state: IRoomCardState) => ({
@@ -48,6 +77,10 @@ export default class RoomCard extends React.Component {
     }))
   }
 
+  /**
+   * The method handles a mouse click on the right button,
+  * and shows the next slide
+ */
   handlerClickBtnNext = (e: React.SyntheticEvent<HTMLDivElement>) => {
     if (this.state.offset > 540) {
       this.setState((state: IRoomCardState) => ({
