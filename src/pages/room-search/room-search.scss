@@ -1,0 +1,43 @@
+@import '../../assets/styles/fonts.scss';
+@import '../../assets/styles/colors.scss';
+
+.main-search {
+  padding-top: 80px;
+}
+
+.main-search__flex {
+  display: flex;
+}
+
+.main-search__filter {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 35%;
+
+  .main-search__filter-item {
+    margin-bottom: 25px;
+  }
+}
+
+.main-search__wrapp-amount-guest-dropdown {
+  width: 266px;
+}
+
+.main-search__rooms {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+.main-search__rooms-title {
+  font-family: 'Montserrat-Bold';
+  font-size: 24px;
+  line-height: 29px;
+  color: $dark-100;
+}
+
+.main-search__rooms-flex {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
