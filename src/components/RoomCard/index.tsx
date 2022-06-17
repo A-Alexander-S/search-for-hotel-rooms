@@ -3,6 +3,9 @@ import "./room-card.scss";
 import { Rating } from "../Rating";
 import arrowPrev from "./img/arrow_prev.png";
 import arrowNext from "./img/arrow_next.png";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+import { SERVER_ROOT_URL } from "../../utils/constants";
 
 interface IRoomCardProps {
   options: {
@@ -95,8 +98,8 @@ export default class RoomCard extends React.Component<IRoomCardProps, IRoomCardS
       sliderTrackLeftShift: { left: `${-state.offset}px` }
     }))
   }
-
   render(): React.ReactNode {
+    const baseServerUrl = `${SERVER_ROOT_URL}${this.props.options.imgsRoom}`
     return (
       <div className="room-card">
 
@@ -105,7 +108,11 @@ export default class RoomCard extends React.Component<IRoomCardProps, IRoomCardS
             style={this.state.sliderTrackLeftShift}
             className="room-card__slider-track"
             ref={this.trackRef}>
-            <div className="room-card__slider-item" ref={this.itemRef}>1</div>
+            <div className="room-card__slider-item" ref={this.itemRef}>
+              <img
+                style={{ width: '100%' }}
+                src={baseServerUrl} alt="" />
+            </div>
             <div className="room-card__slider-item">2</div>
             <div className="room-card__slider-item">3</div>
             <div className="room-card__slider-item">4</div>
@@ -146,3 +153,11 @@ export default class RoomCard extends React.Component<IRoomCardProps, IRoomCardS
     )
   }
 }
+
+// const mapStateToProps = (store: any) => ({
+//   imgRooms: store.roomsReducer.imgRooms,
+// });
+// const mapDispatchToProps = dispatch => bindActionCreators({
+//   // getRoomsThunk
+// }, dispatch);
+// export default connect(mapStateToProps, mapDispatchToProps)(RoomCard);
