@@ -6,7 +6,9 @@ interface ILengthStayProps {
     dateArrivalTitle: string,
     dateArrivalPlaceholder?: string,
     dateDepartureTitle: string,
-    dateDeparturePlaceholder?: string
+    dateDeparturePlaceholder?: string,
+    handleChangeInputArrival: Function,
+    handleChangeInputDeparture: Function
   }
 }
 
@@ -14,6 +16,14 @@ export default class LengthStay extends React.Component<ILengthStayProps> {
 
   constructor(props: ILengthStayProps) {
     super(props);
+  }
+
+  handleChangeInputArrival = (e: React.ChangeEvent<HTMLInputElement>) => {
+    this.props.options.handleChangeInputArrival(e);
+  }
+
+  handleChangeInputDeparture = (e: React.ChangeEvent<HTMLInputElement>) => {
+    this.props.options.handleChangeInputDeparture(e);
   }
 
   render(): React.ReactNode {
@@ -31,7 +41,8 @@ export default class LengthStay extends React.Component<ILengthStayProps> {
             className="date-arrival__dropdown length-stay__input"
             placeholder={dateArrivalPlaceholder}
             name="date-arrival"
-            type="date" />
+            type="date"
+            onChange={this.handleChangeInputArrival} />
         </div>
         <div className="length-stay__date-departure">
           <p className="ength-stay__departure-title caption">{dateDepartureTitle}</p>
@@ -39,7 +50,8 @@ export default class LengthStay extends React.Component<ILengthStayProps> {
             className="date-departure__dropdown length-stay__input"
             placeholder={dateDeparturePlaceholder}
             name="date-departure"
-            type="date" />
+            type="date"
+            onChange={this.handleChangeInputDeparture} />
         </div>
       </div>
     );
