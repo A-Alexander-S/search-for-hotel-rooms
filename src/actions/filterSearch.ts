@@ -5,40 +5,74 @@ export const GET_ALL_ROOMS_REQUEST = '@@rooms/GET_ALL_ROOMS_REQUEST';
 export const GET_ALL_ROOMS_SUCCESS = '@@rooms/GET_ALL_ROOMS_SUCCESS';
 export const GET_ALL_ROOMS_FAILURE = '@@rooms/GET_ALL_ROOMS_FAILURE';
 
-type getRoomsRequestAction = {
+export const GET_FILTERED_ROOMS_REQUEST = '@@roomsFilter/GET_FILTERED_ROOMS_REQUEST';
+export const GET_FILTERED_ROOMS_SUCCESS = '@@roomsFilter/GET_FILTERED_ROOMS_SUCCESS';
+export const GET_FILTERED_ROOMS_FAILURE = '@@roomsFilter/GET_FILTERED_ROOMS_FAILURE';
+
+//Initial get request actions
+type getRoomsRequestActionType = {
   type: typeof GET_ALL_ROOMS_REQUEST,
 }
 
-type getRoomsSuccessAction = {
+type getRoomsSuccessActionType = {
   type: typeof GET_ALL_ROOMS_SUCCESS,
   payload: {
     rooms: IRoom[]
   }
 }
 
-type getRoomsFailureAction = {
+type getRoomsFailureActionType = {
   type: typeof GET_ALL_ROOMS_FAILURE,
   payload: any
 }
 
-export type ActionType =
-  getRoomsRequestAction
-  | getRoomsSuccessAction
-  | getRoomsFailureAction;
+//Filtered actions
+type getFilteredRoomsRequestActionType = {
+  type: typeof GET_FILTERED_ROOMS_REQUEST,
+}
 
-export const getRoomsRequestAction = () => <getRoomsRequestAction>({
+type getFilteredRoomsSuccessActionType = {
+  type: typeof GET_FILTERED_ROOMS_SUCCESS,
+  payload: any
+}
+
+type getFilteredRoomsFAILUREActionType = {
+  type: typeof GET_FILTERED_ROOMS_FAILURE,
+  payload: any
+}
+
+export type ActionType =
+  getRoomsRequestActionType
+  | getRoomsSuccessActionType
+  | getRoomsFailureActionType
+  | getFilteredRoomsRequestActionType
+  | getFilteredRoomsSuccessActionType
+  | getFilteredRoomsFAILUREActionType;
+
+/**
+* initial get all rooms actions
+*/
+export const getRoomsRequestAction = () => <getRoomsRequestActionType>({
   type: GET_ALL_ROOMS_REQUEST
 });
 
-export const getRoomsSuccessAction = (rooms: IRoom[]) => <getRoomsSuccessAction>({
+export const getRoomsSuccessAction = (rooms: IRoom[]) => <getRoomsSuccessActionType>({
   type: GET_ALL_ROOMS_SUCCESS,
   payload: {
     rooms
   }
 });
 
-export const getRoomsFailureAction = (e) => <getRoomsFailureAction>({
+export const getRoomsFailureAction = (e) => <getRoomsFailureActionType>({
   type: GET_ALL_ROOMS_FAILURE,
+  payload: e
+});
+
+/**
+ * get filtered actions
+*/
+export const getFilteredRoomsRequestAction = (e) => <getFilteredRoomsSuccessActionType>({
+  type: GET_FILTERED_ROOMS_SUCCESS,
   payload: e
 });
 
@@ -51,5 +85,8 @@ export const getRoomsThunk = () => async (dispatch, getState) => {
     })
     .catch(e => dispatch.getRoomsFailureAction(e));
 }
-
+/*
+- переименованы экшены, добавлен поствикс type
+- added getFilteredRoomsRequestActionType ...
+*/
 
