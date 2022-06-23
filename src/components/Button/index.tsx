@@ -7,9 +7,9 @@ export interface IButtonProps {
     text: string
     width?: string,
     height?: string,
-    img?: boolean
+    img?: boolean,
   },
-  onClick?: Function
+  onClick?: Function,
 }
 
 export default class Button extends React.Component<IButtonProps> {
@@ -18,6 +18,9 @@ export default class Button extends React.Component<IButtonProps> {
     super(props)
   }
 
+  /**
+   * handler ckick, difiant prps onClick
+  */
   handleClickButton = (e: React.MouseEvent<HTMLButtonElement>) => {
     if (this.props.onClick !== undefined) {
       this.props.onClick(e)
