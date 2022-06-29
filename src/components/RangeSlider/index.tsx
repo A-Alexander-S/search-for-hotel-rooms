@@ -12,7 +12,6 @@ export class RangeSlider extends React.Component {
     this.rangeSlider = React.createRef<HTMLDivElement>();
   }
 
-
   /**
    * plugin noUiSlider
   */

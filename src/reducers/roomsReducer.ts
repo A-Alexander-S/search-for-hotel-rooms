@@ -1,10 +1,10 @@
 import { FETCH_STATUSES } from '../utils/constants'
 import {
-  ActionType,
+  roomsActionType,
   GET_ALL_ROOMS_FAILURE,
   GET_ALL_ROOMS_REQUEST,
   GET_ALL_ROOMS_SUCCESS
-} from "../actions/filterSearch";
+} from "../actions/roomsActions";
 
 export interface IRoom {
   id: number,
@@ -62,7 +62,7 @@ const initialStore: RoomsReducerInitialStore = {
   status: FETCH_STATUSES.idle
 }
 
-export default function roomsReducer(store = initialStore, action: ActionType): RoomsReducerInitialStore {
+export default function roomsReducer(store = initialStore, action: roomsActionType): RoomsReducerInitialStore {
   switch (action.type) {
     case GET_ALL_ROOMS_REQUEST: {
       return {
