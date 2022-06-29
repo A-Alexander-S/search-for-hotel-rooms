@@ -2,6 +2,12 @@ import React from "react";
 import Button from "../Button/index";
 import "./amount-guests-dropdown.scss";
 
+// interface IAmountGuestsDropdownProps {
+//   options: {
+//     onChange?: Function
+//   }
+// }
+
 interface IAmountGuestsDropdownState {
   classesButton: string,
   totalNumberOfGuests: number,
@@ -10,7 +16,8 @@ interface IAmountGuestsDropdownState {
   quantityBabies: number
 }
 
-export default class AmountGuestsDropdown extends React.Component<{}, IAmountGuestsDropdownState> {
+export default class AmountGuestsDropdown extends React.Component
+  <{}, IAmountGuestsDropdownState> {
   state: IAmountGuestsDropdownState = {
     classesButton: "amount-guests-dropdown__button",
     totalNumberOfGuests: 0,
@@ -22,6 +29,10 @@ export default class AmountGuestsDropdown extends React.Component<{}, IAmountGue
   constructor(props) {
     super(props);
     this.handleClickClearButton = this.handleClickClearButton.bind(this);
+  }
+
+  handleChangeAmountGuests = () => {
+
   }
 
   /**
@@ -191,7 +202,8 @@ export default class AmountGuestsDropdown extends React.Component<{}, IAmountGue
                 onClick={this.handleClickClearButton}
               />}
             <Button
-              options={{ classButton: "button-text", text: "применить" }} />
+              options={{ classButton: "button-text", text: "применить" }}
+              onClick={this.handleButton} />
           </li>
         </ul>
       </div>

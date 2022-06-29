@@ -15,18 +15,49 @@ import AdditionalAmenities from "../../components/AdditionalAmenities";
 import "./room-search.scss";
 import Button from "../../components/Button";
 import { IRoom } from '../../reducers/roomsReducer'
-import { getRoomsThunk } from "../../actions/filterSearch";
+import { getRoomsThunk } from "../../actions/roomsActions";
+import { match } from "react-router-dom";
 
 interface IRoomSearchProps {
   rooms: IRoom[],
   getRoomsThunk: Function
 }
 
-class RoomSearch extends React.Component<IRoomSearchProps> {
+interface IRoomsSearchState {
+  dateArrival: string | null | Date
+  dateDeparture: string | null | Date
+}
+
+class RoomSearch extends React.Component<IRoomSearchProps, IRoomsSearchState> {
+
+  state: IRoomsSearchState = {
+    dateArrival: null,
+    dateDeparture: null,
+  };
 
   constructor(props: IRoomSearchProps) {
     super(props);
-    this.handleClickButtonSearch = this.handleClickButtonSearch.bind(this);
+    this.handleClickButtonSearchTheFilter = this.handleClickButtonSearchTheFilter.bind(this);
+    this.handleChangeInputArrival = this.handleChangeInputArrival.bind(this);
+    this.handleChangeInputDeparture = this.handleChangeInputDeparture.bind(this);
+  }
+
+  /**
+  * getting arrival date
+ */
+  handleChangeInputArrival = (e: React.ChangeEvent<HTMLInputElement>) => {
+    this.setState({
+      dateArrival: e.currentTarget.value
+    });
+  }
+
+  /**
+   * getting departure date
+  */
+  handleChangeInputDeparture = (e: React.ChangeEvent<HTMLInputElement>) => {
+    this.setState({
+      dateDeparture: e.currentTarget.value
+    });
   }
 
   /**
@@ -39,11 +70,13 @@ class RoomSearch extends React.Component<IRoomSearchProps> {
   /**
    * Requests from the server all rooms matching the filter
   */
-  handleClickButtonSearch = (e: React.SyntheticEvent<HTMLButtonElement>) => {
+  handleClickButtonSearchTheFilter = (e: React.SyntheticEvent<HTMLButtonElement>) => {
     this.props.getRoomsThunk();
   }
 
   render(): React.ReactNode {
+    // console.log(this.state.dateArrival);
+    // console.log(this.state.dateDeparture);
     return (
       <>
         <Header />
@@ -56,8 +89,10 @@ class RoomSearch extends React.Component<IRoomSearchProps> {
                     options={{
                       dateArrivalTitle: "Прибытие",
                       dateArrivalPlaceholder: "Прибытие",
-                      dateDepartureTitle: "Прибытие",
+                      dateDepartureTitle: "Отбытие",
                       dateDeparturePlaceholder: "Выезд",
+                      handleChangeInputArrival: this.handleChangeInputArrival,
+                      handleChangeInputDeparture: this.handleChangeInputDeparture
                     }} />
                 </div>
                 <div className="main-search__wrapp-amount-guest-dropdown main-search__filter-item">
@@ -95,9 +130,10 @@ class RoomSearch extends React.Component<IRoomSearchProps> {
                   text: "Поиск",
                   width: "85%",
                   height: "",
-                  img: false
+                  img: false,
                 }}
-                  onClick={this.handleClickButtonSearch} />
+                  onClick={this.handleClickButtonSearchTheFilter}
+                />
               </section>
               <section className="main-search__rooms">
                 <p className="main-search__rooms-title">
@@ -105,7 +141,7 @@ class RoomSearch extends React.Component<IRoomSearchProps> {
                 </p>
                 <div className="main-search__rooms-flex">
                   {this.props.rooms.map((room: IRoom) => {
-                    return <div className="main-search__wrapp-room-card">
+                    return <div className="main-search__wrapp-room-card" key={room.id}>
                       <RoomCard key={room.id} options={{
                         id: room.id,
                         roomNumber: room.roomNumber,

@@ -32,10 +32,6 @@
   height: 151px;
   min-width: 270px;
 
-  &:nth-child(1) {
-    // background-color: red;
-  }
-
   &:nth-child(2) {
     background-color: blue;
   }
@@ -105,7 +101,6 @@
 
 .room-card__rating-and-reviews {
   display: flex;
-  // align-items: flex-end;
   justify-content: space-between;
   padding-left: 19px;
   padding-right: 19px;
@@ -113,8 +108,6 @@
 
 .room-card__wrapper-rating {
   display: inline-block;
-  // padding-left: 19px;
-  // padding-right: 19px;
 }
 
 .room-card__reviews {
@@ -125,13 +118,11 @@
   display: inline-block;
   font-family: 'Montserrat-Bold';
   font-size: 14px;
-  // line-height: 18px;
   color: $dark-50;
 }
 
 .room-card__reviews-text {
   font-family: 'Montserrat-Regular';
   font-size: 14px;
-  // line-height: 18px;
   color: $dark-50;
 }
