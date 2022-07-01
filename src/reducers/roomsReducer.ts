@@ -29,12 +29,12 @@ export interface IRoom {
   updatedAt: string
 }
 
-export interface RoomsReducerInitialStore {
+export interface IRoomsReducerInitialStore {
   rooms: IRoom[],
   status: string
 }
 
-const initialStore: RoomsReducerInitialStore = {
+const initialStore: IRoomsReducerInitialStore = {
   rooms: [
     {
       "id": 1,
@@ -62,7 +62,7 @@ const initialStore: RoomsReducerInitialStore = {
   status: FETCH_STATUSES.idle
 }
 
-export default function roomsReducer(store = initialStore, action: roomsActionType): RoomsReducerInitialStore {
+export default function roomsReducer(store = initialStore, action: roomsActionType): IRoomsReducerInitialStore {
   switch (action.type) {
     case GET_ALL_ROOMS_REQUEST: {
       return {
