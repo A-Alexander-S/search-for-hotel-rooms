@@ -1,12 +1,9 @@
 import React from "react";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { changeAmountGuestsAction, clearAmountGuestsAction } from "../../actions/filterRoomsActions";
 import Button from "../Button/index";
 import "./amount-guests-dropdown.scss";
-
-// interface IAmountGuestsDropdownProps {
-//   options: {
-//     onChange?: Function
-//   }
-// }
 
 interface IAmountGuestsDropdownState {
   classesButton: string,
@@ -16,8 +13,14 @@ interface IAmountGuestsDropdownState {
   quantityBabies: number
 }
 
-export default class AmountGuestsDropdown extends React.Component
-  <{}, IAmountGuestsDropdownState> {
+interface IAmountGuestsDropdownProps {
+  changeAmountGuestsAction: (quantityAdults: number, quantityChildren: number, quantityBabies: number,) => void,
+  clearAmountGuestsAction: () => void,
+}
+
+class AmountGuestsDropdown extends React.Component<
+  IAmountGuestsDropdownProps, IAmountGuestsDropdownState> {
+    
   state: IAmountGuestsDropdownState = {
     classesButton: "amount-guests-dropdown__button",
     totalNumberOfGuests: 0,
@@ -26,19 +29,20 @@ export default class AmountGuestsDropdown extends React.Component
     quantityBabies: 0,
   }
 
-  constructor(props) {
+  constructor(props: IAmountGuestsDropdownProps) {
     super(props);
     this.handleClickClearButton = this.handleClickClearButton.bind(this);
-  }
-
-  handleChangeAmountGuests = () => {
-
   }
 
   /**
    * method handler hat(button) dropdown
   */
-  handleButton = (e: React.MouseEvent<HTMLButtonElement>) => {
+  handleButtonApply = (e: React.MouseEvent<HTMLButtonElement>) => {
+    this.props.changeAmountGuestsAction(
+      this.state.quantityAdults,
+      this.state.quantityChildren,
+      this.state.quantityBabies,
+    );
     if (this.state.classesButton === "amount-guests-dropdown__button") {
       this.setState({
         classesButton: "amount-guests-dropdown__button amount-guests-dropdown-activ"
@@ -76,7 +80,7 @@ export default class AmountGuestsDropdown extends React.Component
       this.setState((state: IAmountGuestsDropdownState) => ({
         quantityAdults: state.quantityAdults - 1,
         totalNumberOfGuests: state.totalNumberOfGuests - 1
-      }))
+      }));
     } else if (e.currentTarget.classList.contains("increase-adults")) {
       this.setState((state: IAmountGuestsDropdownState) => ({
         quantityAdults: state.quantityAdults + 1,
@@ -147,7 +151,8 @@ export default class AmountGuestsDropdown extends React.Component
       quantityAdults: 0,
       quantityChildren: 0,
       quantityBabies: 0,
-    })
+    });
+    this.props.clearAmountGuestsAction();
   }
 
   render(): React.ReactNode {
@@ -155,7 +160,7 @@ export default class AmountGuestsDropdown extends React.Component
       <div className="amount-guests-dropdown">
         <button
           className={this.state.classesButton}
-          onClick={this.handleButton}>
+          onClick={this.handleButtonApply}>
           {this.state.totalNumberOfGuests > 0 ? this.renderTotalNumberOfGuests() : "Сколько гостей"}
           <svg width="12" height="8" viewBox="0 0 12 8" fill="none">
             <path d="M10.5938 0.578125L12 1.98438L6 7.98438L0 1.98438L1.40625 0.578125L6 5.17188L10.5938 0.578125Z" fill="#1F2041" fillOpacity="0.75" />
@@ -167,7 +172,8 @@ export default class AmountGuestsDropdown extends React.Component
             <span>взрослые</span>
             <div className="amount-guests-dropdown__change-quantity">
               {this.renderPicIncreaseDecreaseGuests("decrease-adults")}
-              <span className="amount-guests-dropdown__list-quantity amount-guests-dropdown__quantity-adults">
+              <span
+                className="amount-guests-dropdown__list-quantity amount-guests-dropdown__quantity-adults">
                 {this.state.quantityAdults}
               </span>
               {this.renderPicIncreaseDecreaseGuests("increase-adults")}
@@ -203,10 +209,17 @@ export default class AmountGuestsDropdown extends React.Component
               />}
             <Button
               options={{ classButton: "button-text", text: "применить" }}
-              onClick={this.handleButton} />
+              onClick={this.handleButtonApply} />
           </li>
         </ul>
       </div>
     )
   }
 }
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+  changeAmountGuestsAction,
+  clearAmountGuestsAction
+}, dispatch);
+
+export default connect(null, mapDispatchToProps)(AmountGuestsDropdown);
