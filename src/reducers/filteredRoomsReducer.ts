@@ -4,6 +4,8 @@ import {
   CHANGE_DATE_DEPARTURE,
   CLEAR_AMOUNT_GUESTS,
   filteredRoomsActionType,
+  MAX_PRICE_PER_ROOM,
+  MIN_PRICE_PER_ROOM,
 } from "../actions/filterRoomsActions";
 
 export interface IFilteredRoomsReducerInitialStore {
@@ -12,6 +14,11 @@ export interface IFilteredRoomsReducerInitialStore {
   quantityAdults: number,
   quantityChildren: number,
   quantityBabies: number,
+  minPricePerRoom: number,
+  maxPricePerRoom: number,
+  smoke: boolean,
+  pets: boolean,
+  guests: boolean,
 }
 
 const initialStore: IFilteredRoomsReducerInitialStore = {
@@ -20,6 +27,11 @@ const initialStore: IFilteredRoomsReducerInitialStore = {
   quantityAdults: 0,
   quantityChildren: 0,
   quantityBabies: 0,
+  minPricePerRoom: 0,
+  maxPricePerRoom: 0,
+  smoke: false,
+  pets: false,
+  guests: false,
 }
 
 export default function filteredRoomsReducer(store = initialStore, action: filteredRoomsActionType) {
@@ -37,7 +49,6 @@ export default function filteredRoomsReducer(store = initialStore, action: filte
       }
     }
     case CHANGE_AMOUNT_GUESTS: {
-      console.log('CHANGE_AMOUNT_GUESTS')
       return {
         ...store,
         quantityAdults: action.payload.quantityAdults,
@@ -51,6 +62,18 @@ export default function filteredRoomsReducer(store = initialStore, action: filte
         quantityAdults: 0,
         quantityChildren: 0,
         quantityBabies: 0,
+      }
+    }
+    case MIN_PRICE_PER_ROOM: {
+      return {
+        ...store,
+        minPricePerRoom: action.payload.minPricePerRoom
+      }
+    }
+    case MAX_PRICE_PER_ROOM: {
+      return {
+        ...store,
+        maxPricePerRoom: action.payload.maxPricePerRoom
       }
     }
     default:

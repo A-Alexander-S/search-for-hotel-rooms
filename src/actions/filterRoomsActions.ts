@@ -8,6 +8,9 @@ export const CHANGE_DATE_DEPARTURE = '@@roomsFilter/CHANGE_DATE_DEPARTURE';
 export const CHANGE_AMOUNT_GUESTS = '@@roomsFilter/CHANGE_AMOUNT_GUESTS';
 export const CLEAR_AMOUNT_GUESTS = '@@roomsFilter/CLEAR_AMOUNT_GUESTS';
 
+export const MIN_PRICE_PER_ROOM = '@@roomsFilter/MIN_PRICE_PER_ROOM';
+export const MAX_PRICE_PER_ROOM = '@@roomsFilter/MAX_PRICE_PER_ROOM';
+
 //Filtered actions type(init)
 type getFilteredRoomsRequestActionType = {
   type: typeof GET_FILTERED_ROOMS_REQUEST,
@@ -23,7 +26,7 @@ type getFilteredRoomsFAILUREActionType = {
   payload: any
 }
 
-//Dates stay actions type
+//Dates stay actions types
 export type changeDateArrivalType = {
   type: typeof CHANGE_DATE_ARRIVAL,
   payload: {
@@ -37,6 +40,23 @@ export type changeDateDepartureType = {
     dateDeparture: string,
   }
 }
+
+//Actions types for min max price per rooms
+export type changeMinPricePerRoomType = {
+  type: typeof MIN_PRICE_PER_ROOM,
+  payload: {
+    minPricePerRoom: number,
+  }
+}
+
+export type changeMaxPricePerRoomType = {
+  type: typeof MAX_PRICE_PER_ROOM,
+  payload: {
+    maxPricePerRoom: number,
+  }
+}
+
+
 
 export type clearAmountGuestsType = {
   type: typeof CLEAR_AMOUNT_GUESTS,
@@ -61,7 +81,9 @@ export type filteredRoomsActionType =
   | changeDateArrivalType
   | changeDateDepartureType
   | changeAmountGuestsType
-  | clearAmountGuestsType;
+  | clearAmountGuestsType
+  | changeMinPricePerRoomType
+  | changeMaxPricePerRoomType;
 
 export const changeDateArrivalAction = (dateArrival: string) => <changeDateArrivalType>{
   type: CHANGE_DATE_ARRIVAL,
@@ -79,6 +101,20 @@ export const changeDateDepartureAction = (dateDeparture: string) => <changeDateD
 
 export const clearAmountGuestsAction = () => <clearAmountGuestsType>{
   type: CLEAR_AMOUNT_GUESTS,
+}
+
+export const changeMinPricePerRoomAction = (minPricePerRoom: number) => <changeMinPricePerRoomType>{
+  type: MIN_PRICE_PER_ROOM,
+  payload: {
+    minPricePerRoom
+  }
+}
+
+export const changeMaxPricePerRoomAction = (maxPricePerRoom: number) => <changeMaxPricePerRoomType>{
+  type: MAX_PRICE_PER_ROOM,
+  payload: {
+    maxPricePerRoom
+  }
 }
 
 export const changeAmountGuestsAction = (
