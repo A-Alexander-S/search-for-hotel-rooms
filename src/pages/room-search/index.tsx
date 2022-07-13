@@ -3,11 +3,10 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
-import { DateFilter } from "../../components/DateFilter";
 import RoomCard from "../../components/RoomCard";
 import LengthStay from "../../components/LengthStay";
 import AmountGuestsDropdown from "../../components/AmountGuestsDropdown";
-import { RangeSlider } from "../../components/RangeSlider";
+import RangeSlider from "../../components/RangeSlider";
 import RulesRoom from "../../components/RulesRoom";
 import Accessibility from "../../components/Accessibility";
 import AmountRoomsDropdown from "../../components/AmountRoomsDropdown";
@@ -16,48 +15,27 @@ import "./room-search.scss";
 import Button from "../../components/Button";
 import { IRoom } from '../../reducers/roomsReducer'
 import { getRoomsThunk } from "../../actions/roomsActions";
-import { match } from "react-router-dom";
 
 interface IRoomSearchProps {
   rooms: IRoom[],
-  getRoomsThunk: Function
+  getRoomsThunk: Function,
 }
 
 interface IRoomsSearchState {
-  dateArrival: string | null | Date
-  dateDeparture: string | null | Date
+  dateArrival: string | undefined
+  dateDeparture: string | undefined
 }
 
 class RoomSearch extends React.Component<IRoomSearchProps, IRoomsSearchState> {
 
   state: IRoomsSearchState = {
-    dateArrival: null,
-    dateDeparture: null,
+    dateArrival: undefined,
+    dateDeparture: undefined,
   };
 
   constructor(props: IRoomSearchProps) {
     super(props);
     this.handleClickButtonSearchTheFilter = this.handleClickButtonSearchTheFilter.bind(this);
-    this.handleChangeInputArrival = this.handleChangeInputArrival.bind(this);
-    this.handleChangeInputDeparture = this.handleChangeInputDeparture.bind(this);
-  }
-
-  /**
-  * getting arrival date
- */
-  handleChangeInputArrival = (e: React.ChangeEvent<HTMLInputElement>) => {
-    this.setState({
-      dateArrival: e.currentTarget.value
-    });
-  }
-
-  /**
-   * getting departure date
-  */
-  handleChangeInputDeparture = (e: React.ChangeEvent<HTMLInputElement>) => {
-    this.setState({
-      dateDeparture: e.currentTarget.value
-    });
   }
 
   /**
@@ -75,8 +53,6 @@ class RoomSearch extends React.Component<IRoomSearchProps, IRoomsSearchState> {
   }
 
   render(): React.ReactNode {
-    // console.log(this.state.dateArrival);
-    // console.log(this.state.dateDeparture);
     return (
       <>
         <Header />
@@ -88,11 +64,7 @@ class RoomSearch extends React.Component<IRoomSearchProps, IRoomsSearchState> {
                   <LengthStay
                     options={{
                       dateArrivalTitle: "Прибытие",
-                      dateArrivalPlaceholder: "Прибытие",
                       dateDepartureTitle: "Отбытие",
-                      dateDeparturePlaceholder: "Выезд",
-                      handleChangeInputArrival: this.handleChangeInputArrival,
-                      handleChangeInputDeparture: this.handleChangeInputDeparture
                     }} />
                 </div>
                 <div className="main-search__wrapp-amount-guest-dropdown main-search__filter-item">
@@ -181,6 +153,6 @@ const mapStateToProps = (store: any) => ({
   rooms: store.roomsReducer.rooms,
 });
 const mapDispatchToProps = dispatch => bindActionCreators({
-  getRoomsThunk
+  getRoomsThunk,
 }, dispatch);
 export default connect(mapStateToProps, mapDispatchToProps)(RoomSearch);

@@ -11,6 +11,8 @@ export const CLEAR_AMOUNT_GUESTS = '@@roomsFilter/CLEAR_AMOUNT_GUESTS';
 export const MIN_PRICE_PER_ROOM = '@@roomsFilter/MIN_PRICE_PER_ROOM';
 export const MAX_PRICE_PER_ROOM = '@@roomsFilter/MAX_PRICE_PER_ROOM';
 
+export const ROOM_RULES = '@@roomsFilter/ROOM_RULES';
+
 //Filtered actions type(init)
 type getFilteredRoomsRequestActionType = {
   type: typeof GET_FILTERED_ROOMS_REQUEST,
@@ -56,8 +58,7 @@ export type changeMaxPricePerRoomType = {
   }
 }
 
-
-
+//Actions types for change amount guests
 export type clearAmountGuestsType = {
   type: typeof CLEAR_AMOUNT_GUESTS,
   payload: {
@@ -74,6 +75,16 @@ type changeAmountGuestsType = {
   }
 }
 
+//Actions types for rooms with certain rules
+export type roomRulesType = {
+  type: typeof ROOM_RULES;
+  payload: {
+    smoke: boolean,
+    pets: boolean,
+    guests: boolean,
+  }
+}
+
 export type filteredRoomsActionType =
   getFilteredRoomsRequestActionType
   | getFilteredRoomsSuccessActionType
@@ -83,7 +94,8 @@ export type filteredRoomsActionType =
   | changeAmountGuestsType
   | clearAmountGuestsType
   | changeMinPricePerRoomType
-  | changeMaxPricePerRoomType;
+  | changeMaxPricePerRoomType
+  | roomRulesType;
 
 export const changeDateArrivalAction = (dateArrival: string) => <changeDateArrivalType>{
   type: CHANGE_DATE_ARRIVAL,
@@ -129,7 +141,18 @@ export const changeAmountGuestsAction = (
     }
   }
 
-
+export const roomRulesAction = (
+  smoke: boolean,
+  pets: boolean,
+  guests: boolean
+) => <roomRulesType>{
+  type: ROOM_RULES,
+  payload: {
+    smoke,
+    pets,
+    guests,
+  }
+}
 
 
 
