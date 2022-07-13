@@ -6,11 +6,12 @@ import {
   filteredRoomsActionType,
   MAX_PRICE_PER_ROOM,
   MIN_PRICE_PER_ROOM,
+  ROOM_RULES,
 } from "../actions/filterRoomsActions";
 
 export interface IFilteredRoomsReducerInitialStore {
-  dateArrival: number | undefined,
-  dateDeparture: number | undefined,
+  dateArrival: string | null,
+  dateDeparture: string | null,
   quantityAdults: number,
   quantityChildren: number,
   quantityBabies: number,
@@ -22,8 +23,8 @@ export interface IFilteredRoomsReducerInitialStore {
 }
 
 const initialStore: IFilteredRoomsReducerInitialStore = {
-  dateArrival: undefined,
-  dateDeparture: undefined,
+  dateArrival: null,
+  dateDeparture: null,
   quantityAdults: 0,
   quantityChildren: 0,
   quantityBabies: 0,
@@ -74,6 +75,15 @@ export default function filteredRoomsReducer(store = initialStore, action: filte
       return {
         ...store,
         maxPricePerRoom: action.payload.maxPricePerRoom
+      }
+    }
+    case ROOM_RULES: {
+      console.log('ROOM_RULES')
+      return {
+        ...store,
+        smoke: action.payload.smoke,
+        pets: action.payload.pets,
+        guests: action.payload.guests,
       }
     }
     default:
