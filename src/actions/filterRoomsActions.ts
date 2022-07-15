@@ -17,6 +17,8 @@ export const CHANGE_NUMBER_OF_BEDROOMS = '@@roomsFilter/CHANGE_NUMBER_OF_BEDROOM
 export const CHANGE_NUMBER_OF_BEDS = '@@roomsFilter/CHANGE_NUMBER_OF_BEDS';
 export const CHANGE_NUMBER_OF_BATHROOMS = '@@roomsFilter/CHANGE_NUMBER_OF_BATHROOMS';
 
+export const CHOICE_OF_AVAILABILITY = '@@roomsFilter/CHOICE_OF_AVAILABILITY';
+
 //Filtered actions type(init)
 type getFilteredRoomsRequestActionType = {
   type: typeof GET_FILTERED_ROOMS_REQUEST,
@@ -89,6 +91,15 @@ export type roomRulesType = {
   }
 }
 
+//Actions types for a selection of amenities
+export type choiceOfAvailabilityType = {
+  type: typeof CHOICE_OF_AVAILABILITY;
+  payload: {
+    wideCorridor: true | undefined,
+    assistant: true | undefined
+  }
+}
+
 //Actions types for changes amount rooms
 export type changeNumberOfBedroomsType = {
   type: typeof CHANGE_NUMBER_OF_BEDROOMS;
@@ -124,7 +135,8 @@ export type filteredRoomsActionType =
   | roomRulesType
   | changeNumberOfBedroomsType
   | changeNumberOfBedsType
-  | changeNumberOfBathroomsType;
+  | changeNumberOfBathroomsType
+  | choiceOfAvailabilityType;
 
 export const changeDateArrivalAction = (dateArrival: string) => <changeDateArrivalType>{
   type: CHANGE_DATE_ARRIVAL,
@@ -180,6 +192,17 @@ export const roomRulesAction = (
     smoke,
     pets,
     guests,
+  }
+}
+
+export const choiceOfAvailabilityAction = (
+  wideCorridor: true | undefined,
+  assistant: true | undefined
+) => <choiceOfAvailabilityType>{
+  type: CHOICE_OF_AVAILABILITY,
+  payload: {
+    wideCorridor,
+    assistant
   }
 }
 

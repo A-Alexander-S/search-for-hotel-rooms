@@ -5,6 +5,7 @@ import {
   CHANGE_NUMBER_OF_BATHROOMS,
   CHANGE_NUMBER_OF_BEDROOMS,
   CHANGE_NUMBER_OF_BEDS,
+  CHOICE_OF_AVAILABILITY,
   CLEAR_AMOUNT_GUESTS,
   filteredRoomsActionType,
   MAX_PRICE_PER_ROOM,
@@ -26,6 +27,8 @@ export interface IFilteredRoomsReducerInitialStore {
   numberOfBedrooms: number | undefined,
   numberOfBeds: number | undefined,
   numberOfBathrooms: number | undefined,
+  wideCorridor: true | undefined,
+  assistant: true | undefined,
 }
 
 const initialStore: IFilteredRoomsReducerInitialStore = {
@@ -42,6 +45,8 @@ const initialStore: IFilteredRoomsReducerInitialStore = {
   numberOfBedrooms: 1,
   numberOfBeds: 1,
   numberOfBathrooms: 1,
+  wideCorridor: undefined,
+  assistant: undefined,
 }
 
 export default function filteredRoomsReducer(store = initialStore, action: filteredRoomsActionType) {
@@ -110,6 +115,13 @@ export default function filteredRoomsReducer(store = initialStore, action: filte
       return {
         ...store,
         numberOfBathrooms: action.payload.numberOfBathrooms
+      }
+    }
+    case CHOICE_OF_AVAILABILITY: {
+      return {
+        ...store,
+        wideCorridor: action.payload.wideCorridor,
+        assistant: action.payload.assistant,
       }
     }
     default:
