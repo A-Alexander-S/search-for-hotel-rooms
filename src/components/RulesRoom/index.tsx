@@ -20,6 +20,10 @@ class RulesRoom extends React.Component<IRulesRoomProps> {
     super(props);
   }
 
+  /**
+   * Sending to the store information about whether 
+   * the checkbox is ticked or not
+  */
   handleClickLabel = (e: React.MouseEvent<HTMLLabelElement>) => {
     const { smoke, pets, guests } = this.props;
     if (e.currentTarget.hasAttribute('data-smoke')) {

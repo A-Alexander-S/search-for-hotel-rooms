@@ -13,6 +13,10 @@ export const MAX_PRICE_PER_ROOM = '@@roomsFilter/MAX_PRICE_PER_ROOM';
 
 export const ROOM_RULES = '@@roomsFilter/ROOM_RULES';
 
+export const CHANGE_NUMBER_OF_BEDROOMS = '@@roomsFilter/CHANGE_NUMBER_OF_BEDROOMS';
+export const CHANGE_NUMBER_OF_BEDS = '@@roomsFilter/CHANGE_NUMBER_OF_BEDS';
+export const CHANGE_NUMBER_OF_BATHROOMS = '@@roomsFilter/CHANGE_NUMBER_OF_BATHROOMS';
+
 //Filtered actions type(init)
 type getFilteredRoomsRequestActionType = {
   type: typeof GET_FILTERED_ROOMS_REQUEST,
@@ -85,6 +89,28 @@ export type roomRulesType = {
   }
 }
 
+//Actions types for changes amount rooms
+export type changeNumberOfBedroomsType = {
+  type: typeof CHANGE_NUMBER_OF_BEDROOMS;
+  payload: {
+    numberOfBedrooms: number | undefined
+  }
+}
+
+export type changeNumberOfBedsType = {
+  type: typeof CHANGE_NUMBER_OF_BEDS;
+  payload: {
+    numberOfBeds: number | undefined
+  }
+}
+
+export type changeNumberOfBathroomsType = {
+  type: typeof CHANGE_NUMBER_OF_BATHROOMS;
+  payload: {
+    numberOfBathrooms: number | undefined
+  }
+}
+
 export type filteredRoomsActionType =
   getFilteredRoomsRequestActionType
   | getFilteredRoomsSuccessActionType
@@ -95,7 +121,10 @@ export type filteredRoomsActionType =
   | clearAmountGuestsType
   | changeMinPricePerRoomType
   | changeMaxPricePerRoomType
-  | roomRulesType;
+  | roomRulesType
+  | changeNumberOfBedroomsType
+  | changeNumberOfBedsType
+  | changeNumberOfBathroomsType;
 
 export const changeDateArrivalAction = (dateArrival: string) => <changeDateArrivalType>{
   type: CHANGE_DATE_ARRIVAL,
@@ -151,6 +180,33 @@ export const roomRulesAction = (
     smoke,
     pets,
     guests,
+  }
+}
+
+export const changeNumberOfBedroomsAction = (
+  numberOfBedrooms: number | undefined
+) => <changeNumberOfBedroomsType>{
+  type: CHANGE_NUMBER_OF_BEDROOMS,
+  payload: {
+    numberOfBedrooms
+  }
+}
+
+export const changeNumberOfBedsAction = (
+  numberOfBeds: number | undefined
+) => <changeNumberOfBedsType>{
+  type: CHANGE_NUMBER_OF_BEDS,
+  payload: {
+    numberOfBeds
+  }
+}
+
+export const changeNumberOfBathroomsAction = (
+  numberOfBathrooms: number | undefined
+) => <changeNumberOfBathroomsType>{
+  type: CHANGE_NUMBER_OF_BATHROOMS,
+  payload: {
+    numberOfBathrooms
   }
 }
 

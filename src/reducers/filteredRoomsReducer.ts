@@ -2,6 +2,9 @@ import {
   CHANGE_AMOUNT_GUESTS,
   CHANGE_DATE_ARRIVAL,
   CHANGE_DATE_DEPARTURE,
+  CHANGE_NUMBER_OF_BATHROOMS,
+  CHANGE_NUMBER_OF_BEDROOMS,
+  CHANGE_NUMBER_OF_BEDS,
   CLEAR_AMOUNT_GUESTS,
   filteredRoomsActionType,
   MAX_PRICE_PER_ROOM,
@@ -20,6 +23,9 @@ export interface IFilteredRoomsReducerInitialStore {
   smoke: boolean,
   pets: boolean,
   guests: boolean,
+  numberOfBedrooms: number | undefined,
+  numberOfBeds: number | undefined,
+  numberOfBathrooms: number | undefined,
 }
 
 const initialStore: IFilteredRoomsReducerInitialStore = {
@@ -33,6 +39,9 @@ const initialStore: IFilteredRoomsReducerInitialStore = {
   smoke: false,
   pets: false,
   guests: false,
+  numberOfBedrooms: 1,
+  numberOfBeds: 1,
+  numberOfBathrooms: 1,
 }
 
 export default function filteredRoomsReducer(store = initialStore, action: filteredRoomsActionType) {
@@ -78,12 +87,29 @@ export default function filteredRoomsReducer(store = initialStore, action: filte
       }
     }
     case ROOM_RULES: {
-      console.log('ROOM_RULES')
       return {
         ...store,
         smoke: action.payload.smoke,
         pets: action.payload.pets,
         guests: action.payload.guests,
+      }
+    }
+    case CHANGE_NUMBER_OF_BEDROOMS: {
+      return {
+        ...store,
+        numberOfBedrooms: action.payload.numberOfBedrooms
+      }
+    }
+    case CHANGE_NUMBER_OF_BEDS: {
+      return {
+        ...store,
+        numberOfBeds: action.payload.numberOfBeds
+      }
+    }
+    case CHANGE_NUMBER_OF_BATHROOMS: {
+      return {
+        ...store,
+        numberOfBathrooms: action.payload.numberOfBathrooms
       }
     }
     default:
