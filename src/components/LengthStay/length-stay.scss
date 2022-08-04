@@ -20,17 +20,17 @@
     color: $dark-100;
   }
 
-  &::after {
-    content: url(./img/arrow_expand_more.svg);
-    position: absolute;
-    right: 16px;
-    top: 34px;
-    cursor: pointer
-  }
+  // &::after {
+  //   content: url(./img/arrow_expand_more.svg);
+  //   position: absolute;
+  //   right: 16px;
+  //   top: 34px;
+  //   cursor: pointer
+  // }
 }
 
 .length-stay__input {
-  width: 150px;
+  width: 127px;
   height: 44px;
   border: 1px solid $dark-25;
   background: #FFFFFF;
@@ -59,11 +59,11 @@
     color: $dark-100;
   }
 
-  &::after {
-    content: url(./img/arrow_expand_more.svg);
-    position: absolute;
-    right: 16px;
-    top: 34px;
-    cursor: pointer;
-  }
+  // &::after {
+  //   content: url(./img/arrow_expand_more.svg);
+  //   position: absolute;
+  //   right: 16px;
+  //   top: 34px;
+  //   cursor: pointer;
+  // }
 }

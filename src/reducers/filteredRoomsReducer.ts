@@ -1,4 +1,5 @@
 import {
+  ADDITIONAL_AMENITIES,
   CHANGE_AMOUNT_GUESTS,
   CHANGE_DATE_ARRIVAL,
   CHANGE_DATE_DEPARTURE,
@@ -14,8 +15,8 @@ import {
 } from "../actions/filterRoomsActions";
 
 export interface IFilteredRoomsReducerInitialStore {
-  dateArrival: string | null,
-  dateDeparture: string | null,
+  dateArrival: string | undefined,
+  dateDeparture: string | undefined,
   quantityAdults: number,
   quantityChildren: number,
   quantityBabies: number,
@@ -29,11 +30,15 @@ export interface IFilteredRoomsReducerInitialStore {
   numberOfBathrooms: number | undefined,
   wideCorridor: true | undefined,
   assistant: true | undefined,
+  desktop: boolean,
+  crib: boolean,
+  television: boolean,
+  airConditioner: boolean
 }
 
 const initialStore: IFilteredRoomsReducerInitialStore = {
-  dateArrival: null,
-  dateDeparture: null,
+  dateArrival: undefined,
+  dateDeparture: undefined,
   quantityAdults: 0,
   quantityChildren: 0,
   quantityBabies: 0,
@@ -47,6 +52,10 @@ const initialStore: IFilteredRoomsReducerInitialStore = {
   numberOfBathrooms: 1,
   wideCorridor: undefined,
   assistant: undefined,
+  desktop: false,
+  crib: false,
+  television: false,
+  airConditioner: false
 }
 
 export default function filteredRoomsReducer(store = initialStore, action: filteredRoomsActionType) {
@@ -122,6 +131,15 @@ export default function filteredRoomsReducer(store = initialStore, action: filte
         ...store,
         wideCorridor: action.payload.wideCorridor,
         assistant: action.payload.assistant,
+      }
+    }
+    case ADDITIONAL_AMENITIES: {
+      return {
+        ...store,
+        desktop: action.payload.desktop,
+        crib: action.payload.crib,
+        television: action.payload.television,
+        airConditioner: action.payload.airConditioner,
       }
     }
     default:

@@ -15,10 +15,12 @@ import "./room-search.scss";
 import Button from "../../components/Button";
 import { IRoom } from '../../reducers/roomsReducer'
 import { getRoomsThunk } from "../../actions/roomsActions";
+import { FETCH_STATUSES } from "../../utils/constants";
 
 interface IRoomSearchProps {
   rooms: IRoom[],
-  getRoomsThunk: Function,
+  downloadStatus: string,
+  getRoomsThunk: () => (dispatch: any, getState: any) => Promise<void>,
 }
 
 interface IRoomsSearchState {
@@ -41,7 +43,7 @@ class RoomSearch extends React.Component<IRoomSearchProps, IRoomsSearchState> {
   /**
    * Getting an array of rooms
   */
-  componentDidMount() {
+  UNSAFE_componentWillMount() {
     this.props.getRoomsThunk();
   }
 
@@ -53,6 +55,7 @@ class RoomSearch extends React.Component<IRoomSearchProps, IRoomsSearchState> {
   }
 
   render(): React.ReactNode {
+    const { rooms, downloadStatus } = this.props;
     return (
       <>
         <Header />
@@ -112,32 +115,34 @@ class RoomSearch extends React.Component<IRoomSearchProps, IRoomsSearchState> {
                   Номера, которые мы для вас подобрали
                 </p>
                 <div className="main-search__rooms-flex">
-                  {this.props.rooms.map((room: IRoom) => {
-                    return <div className="main-search__wrapp-room-card" key={room.id}>
-                      <RoomCard key={room.id} options={{
-                        id: room.id,
-                        roomNumber: room.roomNumber,
-                        price: room.price,
-                        countBedrooms: room.countBedrooms,
-                        countBeds: room.countBeds,
-                        countBathrooms: room.countBathrooms,
-                        corridorWidth: room.corridorWidth,
-                        desktop: room.desktop,
-                        chairForFeeding: room.chairForFeeding,
-                        crib: room.crib,
-                        airConditioning: room.airConditioning,
-                        noiseAbsorbingWalls: room.noiseAbsorbingWalls,
-                        windowInEveryBedroom: room.windowInEveryBedroom,
-                        smoke: room.smoke,
-                        pets: room.pets,
-                        guests: room.guests,
-                        imgsRoom: room.imgsRoom,
-                        rating: room.rating,
-                        createdAt: room.createdAt,
-                        updatedAt: room.updatedAt
-                      }} />
-                    </div>
-                  })}
+                  {(downloadStatus === FETCH_STATUSES.request) ? <div>Идет загрузка</div> :
+                    (downloadStatus === FETCH_STATUSES.success) ? rooms.map((room: IRoom) => {
+                      return <div className="main-search__wrapp-room-card" key={room.id}>
+                        <RoomCard key={room.id} options={{
+                          id: room.id,
+                          roomNumber: room.roomNumber,
+                          price: room.price,
+                          countBedrooms: room.countBedrooms,
+                          countBeds: room.countBeds,
+                          countBathrooms: room.countBathrooms,
+                          corridorWidth: room.corridorWidth,
+                          desktop: room.desktop,
+                          chairForFeeding: room.chairForFeeding,
+                          crib: room.crib,
+                          airConditioner: room.airConditioner,
+                          noiseAbsorbingWalls: room.noiseAbsorbingWalls,
+                          windowInEveryBedroom: room.windowInEveryBedroom,
+                          smoke: room.smoke,
+                          pets: room.pets,
+                          guests: room.guests,
+                          imgsRoom: room.imgsRoom,
+                          rating: room.rating,
+                          createdAt: room.createdAt,
+                          updatedAt: room.updatedAt
+                        }} />
+                      </div>
+                    }) :
+                      <div>Извините произошла ошибка</div>}
                 </div>
               </section>
             </div>
@@ -151,6 +156,7 @@ class RoomSearch extends React.Component<IRoomSearchProps, IRoomsSearchState> {
 
 const mapStateToProps = (store: any) => ({
   rooms: store.roomsReducer.rooms,
+  downloadStatus: store.roomsReducer.status,
 });
 const mapDispatchToProps = dispatch => bindActionCreators({
   getRoomsThunk,
