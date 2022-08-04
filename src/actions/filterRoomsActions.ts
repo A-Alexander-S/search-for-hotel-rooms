@@ -19,6 +19,8 @@ export const CHANGE_NUMBER_OF_BATHROOMS = '@@roomsFilter/CHANGE_NUMBER_OF_BATHRO
 
 export const CHOICE_OF_AVAILABILITY = '@@roomsFilter/CHOICE_OF_AVAILABILITY';
 
+export const ADDITIONAL_AMENITIES = '@@roomsFilter/ADDITIONAL_AMENITIES';
+
 //Filtered actions type(init)
 type getFilteredRoomsRequestActionType = {
   type: typeof GET_FILTERED_ROOMS_REQUEST,
@@ -122,6 +124,17 @@ export type changeNumberOfBathroomsType = {
   }
 }
 
+//Actions types for to select additional amenities
+export type additionalAmenitiesType = {
+  type: typeof ADDITIONAL_AMENITIES;
+  payload: {
+    desktop: boolean,
+    crib: boolean,
+    television: boolean,
+    airConditioner: boolean
+  }
+}
+
 export type filteredRoomsActionType =
   getFilteredRoomsRequestActionType
   | getFilteredRoomsSuccessActionType
@@ -136,7 +149,8 @@ export type filteredRoomsActionType =
   | changeNumberOfBedroomsType
   | changeNumberOfBedsType
   | changeNumberOfBathroomsType
-  | choiceOfAvailabilityType;
+  | choiceOfAvailabilityType
+  | additionalAmenitiesType;
 
 export const changeDateArrivalAction = (dateArrival: string) => <changeDateArrivalType>{
   type: CHANGE_DATE_ARRIVAL,
@@ -230,6 +244,21 @@ export const changeNumberOfBathroomsAction = (
   type: CHANGE_NUMBER_OF_BATHROOMS,
   payload: {
     numberOfBathrooms
+  }
+}
+
+export const additionalAmenitiesAction = (
+  desktop: boolean,
+  crib: boolean,
+  television: boolean,
+  airConditioner: boolean
+) => <additionalAmenitiesType>{
+  type: ADDITIONAL_AMENITIES,
+  payload: {
+    desktop,
+    crib,
+    television,
+    airConditioner
   }
 }
 

@@ -19,7 +19,7 @@ interface IRoomCardProps {
     desktop: boolean,
     chairForFeeding: boolean,
     crib: boolean,
-    airConditioning: boolean,
+    airConditioner: boolean,
     noiseAbsorbingWalls: boolean,
     windowInEveryBedroom: boolean,
     smoke: boolean,
